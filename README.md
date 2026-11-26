@@ -1,8 +1,18 @@
 # Website Demo Tryout UMPTKIN
 
+[![Live Demo](https://img.shields.io/badge/Demo-Live%20Preview-teal?style=for-the-badge&logo=github)](https://yuizhi23.github.io/tryout-umptkin/)
+[![React](https://img.shields.io/badge/React-19-blue?style=for-the-badge&logo=react)](https://react.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
+
 Platform simulasi ujian online berbasis **Sistem Seleksi Elektronik (SSE)** untuk persiapan seleksi masuk Perguruan Tinggi Keagamaan Islam Negeri (UIN, IAIN, STAIN) se-Indonesia.
 
 Website ini merupakan prototipe/demo interaktif berstandar EdTech modern yang siap dipresentasikan kepada klien, dilengkapi data dummy yang realistis, simulasi pembayaran, sistem ujian CBT real-time, penilaian otomatis, dan panel manajemen admin terpadu.
+
+---
+
+## 🌐 Live Preview Demo
+Aplikasi dapat langsung dicoba secara online tanpa instalasi melalui:
+👉 **[https://yuizhi23.github.io/tryout-umptkin/](https://yuizhi23.github.io/tryout-umptkin/)**
 
 ---
 
@@ -67,15 +77,20 @@ Website ini merupakan prototipe/demo interaktif berstandar EdTech modern yang si
 
 ---
 
-## 🛠️ Panduan Menjalankan Aplikasi
+## 🛠️ Panduan Menjalankan Lokal
 
-Aplikasi berjalan menggunakan Vite dev server di:
 ```bash
-# Menjalankan server development
-npm run dev
+# Clone repository
+git clone https://github.com/yuizhi23/tryout-umptkin.git
 
-# Membangun versi produksi
-npm run build
+# Masuk ke direktori
+cd tryout-umptkin
+
+# Install dependencies
+npm install
+
+# Jalankan development server
+npm run dev
 ```
 
 Buka URL di browser: **`http://localhost:5173/`**
