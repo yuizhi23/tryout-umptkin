@@ -21,6 +21,7 @@ import { ProfilePage } from './pages/participant/ProfilePage';
 import { PromoPage } from './pages/participant/PromoPage';
 
 // Admin Pages
+import { AdminLoginPage } from './pages/admin/AdminLoginPage';
 import { AdminDashboardPage } from './pages/admin/AdminDashboardPage';
 import { AdminQuestionsPage } from './pages/admin/AdminQuestionsPage';
 import { AdminPackagesPage } from './pages/admin/AdminPackagesPage';
@@ -31,7 +32,7 @@ import { AdminPaymentsPage } from './pages/admin/AdminPaymentsPage';
 import { Menu, X, Shield, User, RotateCcw } from 'lucide-react';
 
 export const App = () => {
-  const { mode, currentPage, switchMode, resetDemoData } = useApp();
+  const { mode, currentPage, switchMode, isAdminAuthenticated, logoutAdmin, resetDemoData } = useApp();
   const [isAdminMobileOpen, setIsAdminMobileOpen] = useState(false);
 
   // Render Participant Pages
@@ -43,6 +44,8 @@ export const App = () => {
         return <LoginPage />;
       case 'register':
         return <RegisterPage />;
+      case 'admin-login':
+        return <AdminLoginPage />;
       case 'dashboard':
         return <DashboardPage />;
       case 'packages':
@@ -86,8 +89,17 @@ export const App = () => {
     }
   };
 
-  // If in Admin Mode, wrap with Admin layout (sidebar + main content)
+  // If in Admin Mode, ensure admin authentication first
   if (mode === 'admin') {
+    if (!isAdminAuthenticated) {
+      return (
+        <div className="min-h-screen bg-slate-950">
+          <AdminLoginPage />
+          <ToastContainer />
+        </div>
+      );
+    }
+
     return (
       <div className="min-h-screen bg-slate-50 flex flex-col lg:flex-row antialiased">
         {/* Desktop Admin Sidebar */}

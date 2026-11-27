@@ -15,7 +15,7 @@ import {
 } from 'lucide-react';
 
 export const AdminSidebar = () => {
-  const { currentPage, navigateTo, switchMode, adminUser } = useApp();
+  const { currentPage, navigateTo, switchMode, logoutAdmin, adminUser } = useApp();
 
   const navItems = [
     { id: 'admin-dashboard', label: 'Dashboard Utama', icon: LayoutDashboard },
@@ -79,14 +79,26 @@ export const AdminSidebar = () => {
           </div>
         </div>
 
-        {/* Switch back to participant mode */}
-        <button
-          onClick={() => switchMode('participant')}
-          className="w-full flex items-center justify-center gap-2 px-3 py-2 rounded-xl bg-slate-800 hover:bg-slate-700/80 text-teal-300 hover:text-teal-200 text-xs font-bold transition-colors border border-slate-700"
-        >
-          <User className="w-3.5 h-3.5" />
-          <span>Beralih ke Tampilan Peserta</span>
-        </button>
+        {/* Actions: View Participant Site & Logout */}
+        <div className="space-y-1.5">
+          <button
+            type="button"
+            onClick={() => switchMode('participant')}
+            className="w-full flex items-center justify-center gap-2 px-3 py-2 rounded-xl bg-slate-800 hover:bg-slate-700/80 text-teal-300 hover:text-teal-200 text-xs font-bold transition-colors border border-slate-700 cursor-pointer"
+          >
+            <User className="w-3.5 h-3.5" />
+            <span>Lihat Web Peserta</span>
+          </button>
+
+          <button
+            type="button"
+            onClick={logoutAdmin}
+            className="w-full flex items-center justify-center gap-2 px-3 py-2 rounded-xl bg-rose-500/10 hover:bg-rose-500/20 text-rose-300 text-xs font-bold transition-colors border border-rose-500/30 cursor-pointer"
+          >
+            <LogOut className="w-3.5 h-3.5" />
+            <span>Keluar dari Admin</span>
+          </button>
+        </div>
       </div>
 
     </aside>

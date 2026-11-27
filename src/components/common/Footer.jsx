@@ -1,6 +1,6 @@
 import React from 'react';
 import { useApp } from '../../context/AppContext';
-import { ShieldCheck, Mail, Phone, MapPin, Heart } from 'lucide-react';
+import { ShieldCheck, Mail, Phone, MapPin, Heart, Lock } from 'lucide-react';
 import { Logo } from './Logo';
 
 export const Footer = () => {
@@ -109,10 +109,20 @@ export const Footer = () => {
         {/* Bottom Credits & Disclaimer */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-3">
           <p>
-            © {new Date().getFullYear()} Tryout UMPTKIN Prototype. Hak Cipta Dilindungi.
+            © {new Date().getFullYear()} Tryout UMPTKIN. Hak Cipta Dilindungi.
           </p>
-          <div className="flex items-center gap-1 text-slate-400">
-            Didesain untuk Calon Mahasiswa PTKIN Se-Indonesia
+          <div className="flex items-center gap-3 text-slate-400">
+            <span>Didesain untuk Calon Mahasiswa PTKIN</span>
+            <span className="text-slate-700">•</span>
+            <button
+              type="button"
+              onClick={() => navigateTo('admin-login')}
+              className="text-slate-500 hover:text-teal-400 transition-colors flex items-center gap-1.5 cursor-pointer text-[11px]"
+              title="Khusus Pengelola / Administrator"
+            >
+              <Lock className="w-3 h-3 text-slate-500" />
+              <span>Portal Pengelola</span>
+            </button>
           </div>
         </div>
       </div>

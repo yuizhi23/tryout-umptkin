@@ -18,6 +18,11 @@ export const AppProvider = ({ children }) => {
   const [currentPage, setCurrentPage] = useState(() => localStorage.getItem('umptkin_page') || 'landing');
   const [pageParams, setPageParams] = useState({});
 
+  // Admin Auth State
+  const [isAdminAuthenticated, setIsAdminAuthenticated] = useState(() => {
+    return localStorage.getItem('umptkin_admin_auth') === 'true';
+  });
+
   // User State
   const [currentUser, setCurrentUser] = useState(() => {
     const saved = localStorage.getItem('umptkin_user');
@@ -152,15 +157,47 @@ export const AppProvider = ({ children }) => {
 
   // Switch between Participant and Admin Mode
   const switchMode = (newMode) => {
-    setMode(newMode);
     if (newMode === 'admin') {
-      setCurrentPage('admin-dashboard');
-      showToast('Beralih ke Panel Administrator', 'info');
+      if (isAdminAuthenticated) {
+        setMode('admin');
+        setCurrentPage('admin-dashboard');
+        showToast('Beralih ke Panel Administrator', 'info');
+      } else {
+        setMode('participant');
+        setCurrentPage('admin-login');
+      }
     } else {
+      setMode('participant');
       setCurrentPage(currentUser ? 'dashboard' : 'landing');
       showToast('Beralih ke Tampilan Peserta', 'info');
     }
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  // Admin Authentication
+  const loginAdmin = (username, password) => {
+    const validUser = username === 'admin' || username === 'admin@tryoutumptkin.ac.id';
+    const validPass = password === 'admin123' || password === 'admin';
+
+    if (validUser && validPass) {
+      setIsAdminAuthenticated(true);
+      localStorage.setItem('umptkin_admin_auth', 'true');
+      setMode('admin');
+      setCurrentPage('admin-dashboard');
+      showToast('Autentikasi berhasil! Selamat datang di Panel Administrator.', 'success');
+      return { success: true };
+    } else {
+      showToast('Username atau password admin salah!', 'error');
+      return { success: false, message: 'Username atau password salah (Gunakan: admin / admin123)' };
+    }
+  };
+
+  const logoutAdmin = () => {
+    setIsAdminAuthenticated(false);
+    localStorage.removeItem('umptkin_admin_auth');
+    setMode('participant');
+    setCurrentPage('landing');
+    showToast('Anda telah keluar dari Panel Administrator.', 'info');
   };
 
   // Auth Functions
@@ -579,6 +616,9 @@ export const AppProvider = ({ children }) => {
         navigateTo,
         currentUser,
         adminUser,
+        isAdminAuthenticated,
+        loginAdmin,
+        logoutAdmin,
         login,
         register,
         logout,
