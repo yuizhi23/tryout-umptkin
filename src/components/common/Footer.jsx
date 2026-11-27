@@ -1,6 +1,7 @@
 import React from 'react';
 import { useApp } from '../../context/AppContext';
-import { GraduationCap, ShieldCheck, Mail, Phone, MapPin, Heart } from 'lucide-react';
+import { ShieldCheck, Mail, Phone, MapPin, Heart } from 'lucide-react';
+import { Logo } from './Logo';
 
 export const Footer = () => {
   const { currentPage, navigateTo } = useApp();
@@ -15,9 +16,7 @@ export const Footer = () => {
           {/* Brand & Mission */}
           <div className="lg:col-span-2 space-y-3.5">
             <div className="flex items-center gap-2.5">
-              <div className="w-9 h-9 rounded-xl bg-teal-600 flex items-center justify-center text-white font-bold shadow-xs">
-                <GraduationCap className="w-5 h-5" />
-              </div>
+              <Logo size="md" />
               <span className="font-bold text-lg text-white tracking-tight">
                 Tryout <span className="text-teal-400">UMPTKIN</span>
               </span>

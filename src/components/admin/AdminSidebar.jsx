@@ -1,7 +1,7 @@
 import React from 'react';
 import { useApp } from '../../context/AppContext';
+import { Logo } from '../common/Logo';
 import {
-  GraduationCap,
   LayoutDashboard,
   FileQuestion,
   Package,
@@ -32,9 +32,7 @@ export const AdminSidebar = () => {
       {/* Top Brand Header */}
       <div>
         <div className="p-6 border-b border-slate-800 flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-teal-600 flex items-center justify-center text-white shadow-md shadow-teal-600/30">
-            <GraduationCap className="w-6 h-6" />
-          </div>
+          <Logo size="md" />
           <div>
             <h2 className="font-extrabold text-sm text-white tracking-tight">Admin UMPTKIN</h2>
             <p className="text-[10px] text-teal-400 font-medium">Panel Manajemen Pusat</p>

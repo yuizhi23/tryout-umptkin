@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useApp } from '../../context/AppContext';
+import { Logo } from './Logo';
 import {
-  GraduationCap,
   Shield,
   User,
   LogOut,
@@ -42,9 +42,7 @@ export const Navbar = () => {
             className="flex items-center gap-3 cursor-pointer select-none group"
             onClick={() => navigateTo(mode === 'admin' ? 'admin-dashboard' : 'landing')}
           >
-            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-teal-600 text-white flex items-center justify-center shadow-sm shadow-teal-600/30 group-hover:bg-teal-700 transition-colors shrink-0">
-              <GraduationCap className="w-5 h-5 sm:w-5.5 sm:h-5.5" />
-            </div>
+            <Logo size="md" className="group-hover:scale-105 transition-transform" />
             <div className="flex flex-col justify-center">
               <div className="flex items-center gap-2">
                 <span className="font-bold text-base sm:text-[17px] tracking-tight text-slate-900 leading-none">

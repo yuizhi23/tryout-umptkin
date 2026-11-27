@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useApp } from '../../context/AppContext';
 import { Modal } from '../../components/common/Modal';
+import { Logo } from '../../components/common/Logo';
 import {
-  GraduationCap,
   Clock,
   CheckCircle2,
   ChevronLeft,
@@ -92,9 +92,7 @@ export const ExamPage = () => {
           
           {/* Left Brand & Exam Info */}
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-xl bg-teal-600 flex items-center justify-center text-white shadow-sm shrink-0">
-              <GraduationCap className="w-5 h-5" />
-            </div>
+            <Logo size="md" />
             <div>
               <div className="flex items-center gap-2">
                 <span className="font-bold text-sm sm:text-base tracking-tight text-white leading-none">

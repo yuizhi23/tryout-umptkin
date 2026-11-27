@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useApp } from '../../context/AppContext';
-import { GraduationCap, Mail, Lock, ArrowRight, UserCheck, ArrowLeft, ShieldCheck } from 'lucide-react';
+import { Logo } from '../../components/common/Logo';
+import { Mail, Lock, ArrowRight, UserCheck, ArrowLeft, ShieldCheck } from 'lucide-react';
 
 export const LoginPage = () => {
   const { login, navigateTo } = useApp();
@@ -44,8 +45,8 @@ export const LoginPage = () => {
 
         {/* Brand Header */}
         <div className="text-center">
-          <div className="inline-flex w-12 h-12 rounded-2xl bg-teal-600 text-white items-center justify-center shadow-lg shadow-teal-600/30 mb-3">
-            <GraduationCap className="w-7 h-7" />
+          <div className="inline-flex items-center justify-center mb-3">
+            <Logo size="xl" />
           </div>
           <h2 className="text-2xl font-extrabold text-slate-900 tracking-tight">
             Masuk Akun Peserta
