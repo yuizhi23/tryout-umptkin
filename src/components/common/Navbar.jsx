@@ -85,6 +85,18 @@ export const Navbar = () => {
               </button>
               <button
                 type="button"
+                onClick={() => navigateTo('promo')}
+                className={`px-3 py-1.5 text-xs font-bold rounded-lg transition-all flex items-center gap-1.5 border ${
+                  currentPage === 'promo'
+                    ? 'bg-amber-400 text-slate-950 border-amber-500 shadow-sm'
+                    : 'text-amber-800 bg-amber-50/80 hover:bg-amber-100 border-amber-200'
+                }`}
+              >
+                <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-ping" />
+                <span>Promo Spesial</span>
+              </button>
+              <button
+                type="button"
                 onClick={() => {
                   navigateTo('landing');
                   setTimeout(() => {
@@ -272,6 +284,16 @@ export const Navbar = () => {
         <div className="md:hidden border-t border-slate-100 bg-white px-4 pt-3 pb-5 space-y-2 animate-in slide-in-from-top-2">
           {mode === 'participant' ? (
             <>
+              <button
+                onClick={() => {
+                  navigateTo('promo');
+                  setIsMobileMenuOpen(false);
+                }}
+                className="w-full text-left px-3 py-2 rounded-lg text-xs font-bold text-amber-800 bg-amber-50 border border-amber-200 flex items-center justify-between"
+              >
+                <span>Halaman Promo Spesial 🔥</span>
+                <span className="text-[10px] bg-rose-600 text-white px-2 py-0.5 rounded-full font-black">HOT</span>
+              </button>
               <button
                 onClick={() => {
                   navigateTo('landing');

@@ -147,23 +147,21 @@ export const LandingPage = () => {
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5 pt-1">
                 <button
                   type="button"
-                  onClick={() => navigateTo('package-detail', { packageId: 'TO-01' })}
-                  className="w-full sm:w-auto px-6 py-3 bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold rounded-xl shadow-md shadow-teal-500/20 text-xs sm:text-sm flex items-center justify-center gap-2 transition-all cursor-pointer group"
+                  onClick={() => navigateTo('promo')}
+                  className="w-full sm:w-auto px-6 py-3 bg-amber-400 hover:bg-amber-300 text-slate-950 font-black rounded-xl shadow-lg shadow-amber-400/20 text-xs sm:text-sm flex items-center justify-center gap-2 transition-all cursor-pointer group"
                 >
-                  <span>Mulai Tryout Gratis</span>
+                  <Flame className="w-4 h-4 fill-rose-600 text-rose-600" />
+                  <span>Katalog Lengkap Promo & Bimbel</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                 </button>
 
                 <button
                   type="button"
-                  onClick={() => {
-                    const el = document.getElementById('daftar-paket');
-                    if (el) el.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                  className="w-full sm:w-auto px-6 py-3 bg-white/10 hover:bg-white/15 text-white font-semibold rounded-xl border border-white/20 text-xs sm:text-sm flex items-center justify-center gap-2 transition-colors cursor-pointer"
+                  onClick={() => navigateTo('package-detail', { packageId: 'TO-01' })}
+                  className="w-full sm:w-auto px-6 py-3 bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold rounded-xl shadow-md shadow-teal-500/20 text-xs sm:text-sm flex items-center justify-center gap-2 transition-all cursor-pointer group"
                 >
-                  <BookOpen className="w-4 h-4 text-teal-300" />
-                  <span>Lihat Pilihan Paket</span>
+                  <span>Mulai Tryout Gratis</span>
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                 </button>
               </div>
 

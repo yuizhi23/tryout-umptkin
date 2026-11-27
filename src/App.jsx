@@ -18,6 +18,7 @@ import { ResultPage } from './pages/participant/ResultPage';
 import { ReviewPage } from './pages/participant/ReviewPage';
 import { RankingPage } from './pages/participant/RankingPage';
 import { ProfilePage } from './pages/participant/ProfilePage';
+import { PromoPage } from './pages/participant/PromoPage';
 
 // Admin Pages
 import { AdminDashboardPage } from './pages/admin/AdminDashboardPage';
@@ -58,6 +59,8 @@ export const App = () => {
         return <RankingPage />;
       case 'profile':
         return <ProfilePage />;
+      case 'promo':
+        return <PromoPage />;
       default:
         return <LandingPage />;
     }
