@@ -112,7 +112,8 @@ export const REGULAR_PACKAGES = [
     price: 15000,
     discountPrice: null,
     isBestSeller: false,
-    desc: 'Sesi bimbingan belajar tatap muka daring 1x pertemuan interaktif bersama tutor berpengalaman.'
+    badge: 'Bebas Pilih Materi',
+    desc: 'Bebas pilih materi apa saja & bebas pilih jadwal. Sesi malam interaktif via Zoom tatap muka daring.'
   },
   {
     id: 'REG-04',
@@ -122,7 +123,8 @@ export const REGULAR_PACKAGES = [
     price: 60000,
     discountPrice: null,
     isBestSeller: false,
-    desc: 'Paket bimbingan terstruktur 4x pertemuan mendalam mengupas tuntas semua materi dan latihan soal.'
+    badge: 'Paket Hemat 4x',
+    desc: 'Paket terstruktur 4x pertemuan. Bebas kombinasi materi & jadwal malam hari sesuai kesiapanmu.'
   },
   {
     id: 'REG-05',
@@ -207,6 +209,101 @@ export const PROMO_ITEMS = [
     badge: '120 Soal + Timer 120 Menit',
     desc: 'Simulasi intensif 120 soal komprehensif dalam durasi 120 menit real-time.',
     packageId: 'TO-VIP-02'
+  }
+];
+
+export const BIMBEL_SUBJECTS = [
+  {
+    id: 'SUBJ-PA',
+    title: 'Penalaran Akademik',
+    tag: 'TPS / Skolastik',
+    color: 'emerald',
+    desc: 'Bedah pola penalaran gambar, silogisme logika, deret, dan analisis premis deduktif.'
+  },
+  {
+    id: 'SUBJ-BA',
+    title: 'Bahasa Arab',
+    tag: 'Literasi Khusus PTKIN',
+    color: 'teal',
+    desc: 'Pemahaman teks bahasa Arab, qawa\'id dasar, struktur kalimat, dan kosakata kontekstual UMPTKIN.'
+  },
+  {
+    id: 'SUBJ-BI',
+    title: 'Bahasa Indonesia',
+    tag: 'Literasi Membaca',
+    color: 'amber',
+    desc: 'Ide pokok paragraf, penalaran wacana kritis, kohesi kalimat, ejaan, dan analisis simpulan teks.'
+  },
+  {
+    id: 'SUBJ-MTK',
+    title: 'Matematika & Kuantitatif',
+    tag: 'Penalaran Matematika',
+    color: 'rose',
+    desc: 'Aritmatika, aljabar, persamaan fungsi, peluang, matriks, dan trik kilat eliminasi jawaban.'
+  },
+  {
+    id: 'SUBJ-ENG',
+    title: 'Bahasa Inggris',
+    tag: 'English Literacy',
+    color: 'sky',
+    desc: 'Reading comprehension, main idea, inference, vocabulary in context, dan teks deskriptif/eksposisi.'
+  },
+  {
+    id: 'SUBJ-ISLAM',
+    title: 'Literasi Ajaran Islam',
+    tag: 'Keislaman Standar',
+    color: 'indigo',
+    desc: 'Al-Qur\'an Hadits, Sejarah Kebudayaan Islam, Fikih Ibadah, dan Aqidah Akhlak sesuai kisi-kisi.'
+  }
+];
+
+export const BIMBEL_RULES = {
+  scheduleNote: 'Jadwal Bimbel pasti MALAM (antara jam 7 atau 8 malam / 19.00 - 20.00 WIB)',
+  scheduleRestriction: 'TIDAK ADA Jadwal Bimbel Pagi, Siang, maupun Sore',
+  flexibility: 'Bebas pilih mau Bimbel Materi apa saja & Bebas pilih Jadwal sesuai yang telah ditentukan',
+  pricing: [
+    { title: 'Bimbel 1x Pertemuan', price: 15000, note: 'Bebas pilih 1 materi & 1 jadwal malam' },
+    { title: 'Bimbel 4x Pertemuan', price: 60000, note: 'Bebas pilih 4 materi & 4 jadwal malam' }
+  ],
+  stats: 'Sudah Meloloskan 1.000++ Peserta UMPTKIN ke PTKIN Favorit'
+};
+
+export const ALUMNI_TESTIMONIALS = [
+  {
+    name: 'Raudatul Fitria',
+    passedTo: 'UIN Sunan Gunung Djati Bandung',
+    major: 'Pendidikan Bahasa Inggris',
+    quote: 'Alhamdulillah lulus kakk len! Kakak bener-bener pahlawan di balik layar yg nemenin aku belajar sampe larut malam. Pembahasan soalnya gampang dipahami.'
+  },
+  {
+    name: 'Ridho Arya Pratama',
+    passedTo: 'UIN Sunan Gunung Djati Bandung',
+    major: 'Ekonomi Syariah',
+    quote: 'Makasih banyak guruku! Murid kakak ini lulus pilihan 1. Bimbingan bersama Kak Lenny super sabar dan materi langsung nempel.'
+  },
+  {
+    name: 'Chairunnisa',
+    passedTo: 'UIN Alauddin Makassar',
+    major: 'Ekonomi Islam',
+    quote: 'Kakk mau infoo aku luluss kakk stlh 2 kali ditolakkk! Syukron bngt kak Len selama ini udh bimbing aku pas bimbel, love sekebon buat kak Leni!'
+  },
+  {
+    name: 'Alya Haura Qonita R.',
+    passedTo: 'UIN Syarif Hidayatullah Jakarta',
+    major: 'Pendidikan Bahasa Arab',
+    quote: 'Kaa Alhamdulillah masya Allah! Bentar kak lenn mau ngetik long text. Bimbelnya seru bgt dan trik Bahasa Arab Kak Lenny manjur banget di ujian!'
+  },
+  {
+    name: 'Viona Haifa',
+    passedTo: 'UIN Mataram',
+    major: 'Pendidikan Guru Madrasah Ibtidaiyah',
+    quote: 'Assalamu\'alaikum kak Lenny.. Terima Kasih banyak kak. Untung aku ikut bimbel kakak.. Aku lulus di prodi pertama kak! Love you kak!'
+  },
+  {
+    name: 'Alfi',
+    passedTo: 'UIN Siber Syekh Nurjati Cirebon',
+    major: 'Pendidikan Agama Islam (PJJ)',
+    quote: 'Alhamdulillah kak, terimakasih atas ilmunya ya kak, insha Allah jadi amal jariyah buat Ka lenny. Latihan soalnya pas banget sama soal aslinya!'
   }
 ];
 

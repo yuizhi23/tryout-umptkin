@@ -1,7 +1,18 @@
 import React, { useState } from 'react';
 import { useApp } from '../../context/AppContext';
 import { PaymentModal } from '../../components/common/PaymentModal';
-import { PROMO_ITEMS, REGULAR_PACKAGES, CONTACT_INFO } from '../../data/initialData';
+import {
+  PROMO_ITEMS,
+  REGULAR_PACKAGES,
+  BIMBEL_SUBJECTS,
+  BIMBEL_RULES,
+  ALUMNI_TESTIMONIALS,
+  CONTACT_INFO
+} from '../../data/initialData';
+import bimbelMateriImg from '../../assets/bimbel-materi.jpg';
+import bimbelZoomImg from '../../assets/bimbel-zoom.jpg';
+import testimoniLolosImg from '../../assets/testimoni-lolos.jpg';
+import testimoniChatImg from '../../assets/testimoni-chat.jpg';
 import {
   GraduationCap,
   Sparkles,
@@ -22,7 +33,13 @@ import {
   Phone,
   MessageCircle,
   Volume2,
-  ThumbsUp
+  ThumbsUp,
+  Moon,
+  Sun,
+  Video,
+  Users2,
+  Calendar,
+  CheckCircle
 } from 'lucide-react';
 
 export const LandingPage = () => {
@@ -681,6 +698,278 @@ export const LandingPage = () => {
               </a>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* 3.6 SECTION BIMBEL SEMUA MATERI & ATURAN JADWAL MALAM */}
+      <section className="py-16 sm:py-20 bg-slate-900 text-white relative overflow-hidden">
+        {/* Subtle backdrop styling */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+          
+          {/* Header */}
+          <div className="text-center max-w-3xl mx-auto space-y-3">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-teal-500/20 text-teal-300 border border-teal-500/30 text-xs font-bold uppercase tracking-wider">
+              <Video className="w-3.5 h-3.5" />
+              Bimbingan Belajar Interaktif Online
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-white uppercase">
+              BIMBEL SEMUA MATERI UMPTKIN
+            </h2>
+            <p className="text-xs sm:text-sm text-slate-300 max-w-2xl mx-auto leading-relaxed">
+              Kuasai seluruh subtes ujian bersama Kak Lenny Agustin, S. Pd. Bebas pilih materi apa saja dan bebas tentukan jadwal belajar malam harimu.
+            </p>
+          </div>
+
+          {/* Pricing Highlight Pill & Schedule Rules Card */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+            
+            {/* Left: Pricing Options */}
+            <div className="lg:col-span-5 bg-gradient-to-br from-emerald-950 via-teal-950 to-slate-900 p-6 sm:p-7 rounded-2xl border border-emerald-500/40 shadow-xl flex flex-col justify-between">
+              <div>
+                <span className="text-[10px] font-extrabold uppercase tracking-widest text-emerald-400 bg-emerald-950/80 px-2.5 py-1 rounded-full border border-emerald-600/50">
+                  Biaya Bimbingan Terjangkau
+                </span>
+                <h3 className="text-xl sm:text-2xl font-black text-white mt-3">
+                  Pilihan Sesi Bimbel
+                </h3>
+                <p className="text-xs text-slate-300 mt-1">
+                  Bebas pilih materi apa saja & sesi belajar tatap muka langsung via Zoom.
+                </p>
+
+                <div className="mt-5 space-y-3.5">
+                  <div className="p-3.5 rounded-xl bg-slate-800/80 border border-emerald-500/30 flex items-center justify-between">
+                    <div>
+                      <p className="text-xs font-bold text-white">Bimbel 1x Pertemuan</p>
+                      <p className="text-[11px] text-emerald-300">Bebas pilih 1 materi favorit</p>
+                    </div>
+                    <span className="text-xl font-black text-emerald-400 font-mono">Rp 15.000</span>
+                  </div>
+
+                  <div className="p-3.5 rounded-xl bg-slate-800/80 border border-teal-500/40 flex items-center justify-between">
+                    <div>
+                      <p className="text-xs font-bold text-white">Bimbel 4x Pertemuan</p>
+                      <p className="text-[11px] text-teal-300">Bebas pilih 4 materi & jadwal</p>
+                    </div>
+                    <span className="text-xl font-black text-teal-300 font-mono">Rp 60.000</span>
+                  </div>
+
+                  <div className="p-3.5 rounded-xl bg-gradient-to-r from-amber-950/50 to-emerald-950/50 border border-amber-500/50 flex items-center justify-between">
+                    <div>
+                      <span className="text-[9px] font-bold bg-amber-400 text-slate-950 px-1.5 py-0.5 rounded">GARANSI</span>
+                      <p className="text-xs font-bold text-white mt-0.5">Bimbel sampai Ujian</p>
+                    </div>
+                    <span className="text-xl font-black text-amber-300 font-mono">Rp 120.000</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pt-5 mt-5 border-t border-slate-800">
+                <a
+                  href={`https://wa.me/6288247854631?text=${encodeURIComponent(
+                    'Halo Kak Lenny Agustin, saya mau daftar Bimbel UMPTKIN. Mau tanya info jadwal dan materi yang tersedia.'
+                  )}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-full py-3 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-xs sm:text-sm rounded-xl shadow-lg transition-all flex items-center justify-center gap-2"
+                >
+                  <MessageCircle className="w-4 h-4" />
+                  <span>Daftar Bimbel Sekarang (WA)</span>
+                </a>
+              </div>
+            </div>
+
+            {/* Right: Strict Night Schedule Rule Banner */}
+            <div className="lg:col-span-7 bg-slate-800/90 p-6 sm:p-7 rounded-2xl border border-slate-700 flex flex-col justify-between">
+              <div>
+                <div className="flex items-center gap-2 mb-2">
+                  <div className="w-8 h-8 rounded-lg bg-amber-400/20 text-amber-300 flex items-center justify-center">
+                    <Moon className="w-4 h-4 text-amber-300" />
+                  </div>
+                  <div>
+                    <h4 className="text-sm sm:text-base font-extrabold text-white">
+                      Ketentuan Jadwal Bimbingan Belajar
+                    </h4>
+                    <p className="text-xs text-amber-300 font-semibold">
+                      Harap dibaca dan diperhatikan sebelum mendaftar:
+                    </p>
+                  </div>
+                </div>
+
+                <div className="mt-4 space-y-3 text-xs">
+                  <div className="p-3 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-200 flex items-start gap-3">
+                    <Moon className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+                    <div>
+                      <strong className="text-white block font-bold">Jadwal Bimbel Pasti MALAM Hari:</strong>
+                      <span>Sesi pembelajaran berlangsung antara jam <strong>7 malam (19.00 WIB)</strong> atau jam <strong>8 malam (20.00 WIB)</strong> agar tidak mengganggu aktivitas sekolah/kerja.</span>
+                    </div>
+                  </div>
+
+                  <div className="p-3 rounded-xl bg-rose-500/10 border border-rose-500/30 text-rose-200 flex items-start gap-3">
+                    <Sun className="w-4 h-4 text-rose-400 shrink-0 mt-0.5" />
+                    <div>
+                      <strong className="text-white block font-bold">Tidak Ada Jadwal Pagi, Siang, & Sore:</strong>
+                      <span>Semua kelas eksklusif dilaksanakan pada malam hari sesuai kesepakatan kelompok bimbingan.</span>
+                    </div>
+                  </div>
+
+                  <div className="p-3 rounded-xl bg-teal-500/10 border border-teal-500/30 text-teal-200 flex items-start gap-3">
+                    <CheckCircle className="w-4 h-4 text-teal-400 shrink-0 mt-0.5" />
+                    <div>
+                      <strong className="text-white block font-bold">Fleksibilitas Penuh:</strong>
+                      <span>Bebas pilih materi apa saja dan bebas pilih jadwal malam sesuai tanggal yang telah ditentukan pengajar.</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Poster Snapshot Preview */}
+              <div className="mt-5 pt-4 border-t border-slate-700/80 flex items-center justify-between text-xs text-slate-400">
+                <span className="flex items-center gap-1.5 text-emerald-400 font-semibold">
+                  <Trophy className="w-4 h-4" />
+                  {BIMBEL_RULES.stats}
+                </span>
+                <span className="text-[11px] text-slate-500">Live Zoom Interaktif</span>
+              </div>
+            </div>
+
+          </div>
+
+          {/* 6 Grid Pilihan Materi Bimbel */}
+          <div>
+            <div className="flex items-center justify-between mb-5">
+              <div>
+                <h3 className="text-lg sm:text-xl font-bold text-white">6 Pilihan Materi Bimbingan</h3>
+                <p className="text-xs text-slate-400">Pilih materi yang ingin Anda kuasai lebih dalam</p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {BIMBEL_SUBJECTS.map((sub, idx) => (
+                <div
+                  key={sub.id}
+                  className="p-4 rounded-xl bg-slate-800/60 border border-slate-700/80 hover:border-teal-400 transition-all space-y-2 group"
+                >
+                  <div className="flex items-center justify-between">
+                    <span className="text-[10px] font-bold text-teal-400 bg-teal-950 px-2 py-0.5 rounded border border-teal-800">
+                      {sub.tag}
+                    </span>
+                    <span className="text-[11px] font-mono text-slate-500">0{idx + 1}</span>
+                  </div>
+                  <h4 className="font-extrabold text-sm text-white group-hover:text-teal-300 transition-colors">
+                    {sub.title}
+                  </h4>
+                  <p className="text-xs text-slate-400 leading-relaxed font-normal">
+                    {sub.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Zoom Class Documentation & Proof */}
+          <div className="pt-6 border-t border-slate-800 space-y-6">
+            <div className="text-center max-w-xl mx-auto space-y-1">
+              <span className="text-[10px] font-bold text-emerald-400 uppercase tracking-widest">
+                Dokumentasi Langsung
+              </span>
+              <h3 className="text-xl sm:text-2xl font-black text-white">
+                BIMBELNYA ASIK DAN PASTI SERU LOH!
+              </h3>
+              <p className="text-xs text-slate-400">
+                Suasana belajar interaktif via Zoom meeting bersama ratusan calon mahasiswa pejuang PTKIN.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="rounded-2xl overflow-hidden border border-slate-700 bg-slate-800 shadow-lg group">
+                <div className="p-3 bg-slate-850 border-b border-slate-700 text-xs font-semibold text-slate-300 flex items-center justify-between">
+                  <span>Dokumentasi Bimbel Bersama Kak Lenny</span>
+                  <span className="text-[10px] text-teal-400 font-mono">Zoom Room</span>
+                </div>
+                <img
+                  src={bimbelZoomImg}
+                  alt="Dokumentasi Zoom Bimbel Kak Lenny"
+                  className="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-300"
+                />
+              </div>
+
+              <div className="rounded-2xl overflow-hidden border border-slate-700 bg-slate-800 shadow-lg group">
+                <div className="p-3 bg-slate-850 border-b border-slate-700 text-xs font-semibold text-slate-300 flex items-center justify-between">
+                  <span>Materi Pembelajaran Lengkap & Handout</span>
+                  <span className="text-[10px] text-teal-400 font-mono">Live Screen Sharing</span>
+                </div>
+                <img
+                  src={bimbelMateriImg}
+                  alt="Materi Bimbel UMPTKIN"
+                  className="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-300"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Testimoni Kelulusan PTKIN */}
+          <div className="pt-8 border-t border-slate-800 space-y-6">
+            <div className="text-center max-w-xl mx-auto space-y-1">
+              <span className="text-[10px] font-bold text-amber-400 uppercase tracking-widest">
+                Bukti Nyata Kelulusan
+              </span>
+              <h3 className="text-xl sm:text-2xl font-black text-white">
+                TESTIMONI LOLOS UMPTKIN BERSAMA KAK LENNY
+              </h3>
+              <p className="text-xs text-slate-400">
+                Sudah meloloskan 1.000++ peserta UMPTKIN ke berbagai universitas Islam negeri unggulan di seluruh Indonesia.
+              </p>
+            </div>
+
+            {/* Testimonials Quote Cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {ALUMNI_TESTIMONIALS.map((t, idx) => (
+                <div
+                  key={idx}
+                  className="p-4 rounded-xl bg-slate-800/80 border border-slate-700/80 space-y-3 flex flex-col justify-between"
+                >
+                  <p className="text-xs text-slate-300 leading-relaxed italic">
+                    "{t.quote}"
+                  </p>
+                  <div className="pt-2 border-t border-slate-700/60">
+                    <p className="font-extrabold text-xs text-white">{t.name}</p>
+                    <p className="text-[11px] text-emerald-400 font-medium">Lolos: {t.passedTo}</p>
+                    <p className="text-[10px] text-slate-400">Prodi {t.major}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Real Screenshot Gallery */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
+              <div className="rounded-2xl overflow-hidden border border-slate-700 bg-slate-800 shadow-lg">
+                <div className="p-3 bg-slate-850 border-b border-slate-700 text-xs font-semibold text-slate-300">
+                  Pengumuman Resmi Kelulusan Siswa
+                </div>
+                <img
+                  src={testimoniLolosImg}
+                  alt="Bukti Lolos UMPTKIN Siswa Bimbel"
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+
+              <div className="rounded-2xl overflow-hidden border border-slate-700 bg-slate-800 shadow-lg">
+                <div className="p-3 bg-slate-850 border-b border-slate-700 text-xs font-semibold text-slate-300">
+                  Chat Apresiasi & Testimoni WhatsApp Siswa
+                </div>
+                <img
+                  src={testimoniChatImg}
+                  alt="Testimoni WhatsApp Siswa"
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+            </div>
+
+          </div>
+
         </div>
       </section>
 
