@@ -1,5 +1,5 @@
 import React from 'react';
-import logoImg from '../../assets/logo.jpg';
+import logoImg from '../../assets/logo.png';
 
 export const Logo = ({
   size = 'md',
@@ -17,11 +17,11 @@ export const Logo = ({
   const selectedSize = sizeMap[size] || sizeMap.md;
 
   return (
-    <div className={`relative shrink-0 overflow-hidden ${selectedSize} ${rounded} ${className} shadow-sm bg-white ring-1 ring-slate-200/60`}>
+    <div className={`relative shrink-0 overflow-hidden ${selectedSize} ${rounded} ${className} drop-shadow-sm`}>
       <img
         src={logoImg}
         alt="Logo Info UMPTKIN"
-        className="w-full h-full object-cover scale-[1.08]"
+        className="w-full h-full object-contain"
       />
     </div>
   );
