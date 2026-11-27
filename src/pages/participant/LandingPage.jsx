@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useApp } from '../../context/AppContext';
 import { PaymentModal } from '../../components/common/PaymentModal';
+import { PROMO_ITEMS, CONTACT_INFO } from '../../data/initialData';
 import {
   GraduationCap,
   Sparkles,
@@ -16,7 +17,11 @@ import {
   Award,
   Layers,
   Check,
-  Building2
+  Building2,
+  Flame,
+  Phone,
+  MessageCircle,
+  Volume2
 } from 'lucide-react';
 
 export const LandingPage = () => {
@@ -75,21 +80,36 @@ export const LandingPage = () => {
               {/* Badge */}
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-400/25 text-teal-300 text-xs font-medium backdrop-blur-xs">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                <span>Simulasi Standar SSE Panitia Pusat UMPTKIN 2025</span>
+                <span>SIMULASI VIP UMPTKIN 2026 • Resmi Bersama Lenny Agustin, S. Pd.</span>
               </div>
 
               {/* Main Headline */}
               <h1 className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold tracking-tight leading-[1.18] text-white">
-                Persiapkan Langkahmu Menuju{' '}
+                SIMULASI VIP{' '}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-300 via-emerald-300 to-teal-200">
-                  PTKIN Impian
+                  UMPTKIN 2026
                 </span>
               </h1>
 
               {/* Subheading / Description */}
               <p className="text-sm sm:text-base text-slate-300/90 leading-relaxed max-w-xl mx-auto lg:mx-0 font-normal">
-                Simulasi Computer-Based Test (CBT) terstandarisasi dengan materi HOTS, countdown timer real-time, analisis kelemahan subtes, dan perankingan nasional menuju UIN, IAIN, dan STAIN se-Indonesia.
+                Daftar sekarang dan rasakan vibes ujian asli SSE UMPTKIN 2026! Simulasi menggunakan website berstandar resmi, durasi 120 menit dengan 100 soal lengkap, countdown timer real-time, dan leaderboard nasional.
               </p>
+
+              {/* Promo Price Highlight Banner */}
+              <div className="p-3.5 bg-gradient-to-r from-emerald-950/80 to-teal-900/60 border border-emerald-500/40 rounded-xl flex items-center justify-between gap-3 text-left">
+                <div>
+                  <p className="text-[11px] font-bold text-emerald-300 uppercase tracking-wider flex items-center gap-1.5">
+                    <Flame className="w-3.5 h-3.5 text-amber-400 fill-amber-400" />
+                    Biaya Administrasi Terjangkau
+                  </p>
+                  <p className="text-xs text-slate-300 mt-0.5">100 Soal + Timer 120 Menit + Tampilan SSE 2026</p>
+                </div>
+                <div className="text-right shrink-0">
+                  <span className="text-xs text-slate-400 line-through mr-1">25.000</span>
+                  <span className="text-xl sm:text-2xl font-black text-white font-mono text-emerald-400">Rp 10.000</span>
+                </div>
+              </div>
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5 pt-1">
@@ -145,12 +165,12 @@ export const LandingPage = () => {
                       <div className="w-2.5 h-2.5 rounded-full bg-rose-500" />
                       <div className="w-2.5 h-2.5 rounded-full bg-amber-500" />
                       <div className="w-2.5 h-2.5 rounded-full bg-emerald-500" />
-                      <span className="text-[11px] font-mono text-slate-400 ml-1.5">SSE UMPTKIN • CBT Online</span>
+                      <span className="text-[11px] font-mono text-slate-300 font-bold ml-1.5">SSE UMPTKIN 2026 • VIP</span>
                     </div>
 
                     <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-amber-400/15 border border-amber-400/30 text-amber-300 font-mono font-bold text-xs">
                       <Clock className="w-3.5 h-3.5" />
-                      <span>28:45</span>
+                      <span>01:59:21</span>
                     </div>
                   </div>
 
@@ -158,14 +178,26 @@ export const LandingPage = () => {
                   <div className="py-4 space-y-3.5">
                     <div className="flex items-center justify-between text-xs">
                       <span className="font-semibold text-teal-400 bg-teal-950/60 border border-teal-800/80 px-2 py-0.5 rounded text-[10px] tracking-wide uppercase">
-                        Tes Potensi Skolastik (TPS)
+                        Literasi Bahasa • Soal Nomor 61
                       </span>
-                      <span className="text-slate-400 font-mono text-[11px]">Soal 1 / 20</span>
+                      <span className="text-slate-400 font-mono text-[11px]">100 Soal • 120 Menit</span>
+                    </div>
+
+                    {/* Audio Player Bar Simulation like the poster */}
+                    <div className="p-2.5 bg-slate-800/90 rounded-xl border border-slate-700 flex items-center gap-3 text-xs text-slate-300">
+                      <Volume2 className="w-4 h-4 text-teal-400 shrink-0" />
+                      <div className="flex-1 flex items-center gap-2">
+                        <span className="font-mono text-[10px] text-slate-400">0:07 / 0:23</span>
+                        <div className="flex-1 h-1.5 bg-slate-700 rounded-full overflow-hidden">
+                          <div className="w-[30%] h-full bg-teal-500 rounded-full" />
+                        </div>
+                      </div>
+                      <span className="text-[10px] bg-teal-950 text-teal-300 px-1.5 py-0.5 rounded border border-teal-800 font-mono">Audio Listening</span>
                     </div>
 
                     {/* Question Box */}
-                    <div className="p-3.5 bg-slate-800/70 rounded-xl border border-slate-700/70 text-xs text-slate-200 leading-relaxed font-normal">
-                      "Semua mahasiswa PTKIN yang berprestasi memperoleh beasiswa tahfidz atau riset ilmiah. Sebagian mahasiswa Perbankan Syariah berprestasi. Ihsan berprestasi dan tidak menyetorkan hafalan..."
+                    <div className="p-3 bg-slate-800/70 rounded-xl border border-slate-700/70 text-xs text-slate-200 leading-relaxed font-normal">
+                      "Dengarkan potongan percakapan di atas! Pilihlah respons yang paling tepat untuk melengkapi dialog tersebut."
                     </div>
 
                     {/* Answer Options */}
@@ -306,13 +338,18 @@ export const LandingPage = () => {
 
                   {/* Price */}
                   <div className="mb-5 pb-5 border-b border-slate-100">
-                    <div className="flex items-baseline gap-1">
+                    <div className="flex items-baseline gap-1.5 flex-wrap">
                       {pkg.isFree ? (
                         <span className="text-2xl sm:text-3xl font-extrabold text-teal-700 font-mono">GRATIS</span>
                       ) : (
                         <>
-                          <span className="text-xs text-slate-500 font-medium">Rp</span>
-                          <span className="text-2xl sm:text-3xl font-extrabold text-slate-900 font-mono">
+                          {pkg.originalPrice && (
+                            <span className="text-xs text-slate-400 line-through">
+                              Rp {pkg.originalPrice.toLocaleString('id-ID')}
+                            </span>
+                          )}
+                          <span className="text-xs text-teal-700 font-bold">Rp</span>
+                          <span className="text-2xl sm:text-3xl font-black text-slate-900 font-mono">
                             {pkg.price.toLocaleString('id-ID')}
                           </span>
                           <span className="text-xs text-slate-400 font-medium">/ paket</span>
@@ -386,6 +423,133 @@ export const LandingPage = () => {
               </div>
             );
           })}
+        </div>
+      </section>
+
+      {/* 3.5 SECTION PROMO MENJELANG UJIAN UMPTKIN !! */}
+      <section className="py-14 sm:py-18 bg-gradient-to-b from-emerald-50/60 via-teal-50/40 to-white border-t border-b border-emerald-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-2xl mx-auto mb-10">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-100 text-rose-700 text-xs font-bold uppercase tracking-wider mb-2 border border-rose-200">
+              <Flame className="w-4 h-4 fill-rose-600 text-rose-600 animate-bounce" />
+              <span>Promo Spesial Menjelang Ujian</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
+              PROMO MENJELANG UJIAN UMPTKIN !!
+            </h2>
+            <p className="text-xs sm:text-sm text-slate-600 mt-2">
+              Daftar sekarang dan nikmati harga spesial e-book, bimbingan belajar intensif, dan simulasi website resmi.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {PROMO_ITEMS.map((item) => {
+              const isSimulasi = !!item.packageId;
+              return (
+                <div
+                  key={item.id}
+                  className="bg-white rounded-2xl border border-emerald-200/80 p-5 shadow-xs hover:shadow-md hover:border-emerald-400 transition-all flex flex-col justify-between group"
+                >
+                  <div>
+                    <div className="flex items-center justify-between gap-2 mb-3">
+                      <div className="flex items-center gap-2.5">
+                        <span className="w-7 h-7 rounded-full bg-emerald-700 text-white font-black text-xs flex items-center justify-center shrink-0 shadow-xs">
+                          {item.number}
+                        </span>
+                        <div>
+                          <span className="text-[10px] font-bold text-emerald-700 uppercase tracking-wider">
+                            {item.category}
+                          </span>
+                          <h4 className="text-sm font-extrabold text-slate-900 group-hover:text-teal-700 transition-colors">
+                            {item.title}
+                          </h4>
+                        </div>
+                      </div>
+
+                      {item.badge && (
+                        <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 border border-amber-200">
+                          {item.badge}
+                        </span>
+                      )}
+                    </div>
+
+                    <p className="text-xs text-slate-500 leading-relaxed mb-4">
+                      {item.desc}
+                    </p>
+                  </div>
+
+                  <div className="pt-3 border-t border-slate-100 flex items-center justify-between gap-3">
+                    <div className="flex items-baseline gap-1.5">
+                      {item.originalPrice && (
+                        <span className="text-xs text-slate-400 line-through">
+                          {item.originalPrice.toLocaleString('id-ID')}
+                        </span>
+                      )}
+                      <span className="text-xs text-rose-600 font-bold">Rp</span>
+                      <span className="text-lg font-black text-rose-600 font-mono">
+                        {item.discountPrice.toLocaleString('id-ID')}
+                      </span>
+                    </div>
+
+                    {isSimulasi ? (
+                      <button
+                        type="button"
+                        onClick={() => navigateTo('package-detail', { packageId: item.packageId })}
+                        className="px-3.5 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-xl transition-all flex items-center gap-1 shadow-xs cursor-pointer"
+                      >
+                        <span>Coba Website</span>
+                        <ArrowRight className="w-3.5 h-3.5" />
+                      </button>
+                    ) : (
+                      <a
+                        href={`https://wa.me/6288247854631?text=${encodeURIComponent(`Halo Kak ${CONTACT_INFO.authorName}, saya tertarik memesan promo "${item.title}" seharga Rp ${item.discountPrice.toLocaleString('id-ID')}`)}`}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="px-3.5 py-1.5 bg-rose-600 hover:bg-rose-700 text-white text-xs font-bold rounded-xl transition-all flex items-center gap-1 shadow-xs"
+                      >
+                        <MessageCircle className="w-3.5 h-3.5" />
+                        <span>Pesan via WA</span>
+                      </a>
+                    )}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Contact Bar for Promo */}
+          <div className="mt-8 p-4 rounded-2xl bg-white border border-emerald-300 shadow-sm flex flex-col md:flex-row items-center justify-between gap-4">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0">
+                <Phone className="w-5 h-5 text-emerald-700" />
+              </div>
+              <div>
+                <p className="text-xs font-bold text-slate-900">Hubungi Official Admin / Pengajar:</p>
+                <p className="text-xs text-emerald-700 font-semibold">{CONTACT_INFO.authorName} • WhatsApp: {CONTACT_INFO.whatsapp}</p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-2 flex-wrap">
+              <a
+                href={CONTACT_INFO.whatsappUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-xl flex items-center gap-1.5 shadow-xs transition-colors"
+              >
+                <MessageCircle className="w-4 h-4" />
+                <span>Chat WhatsApp</span>
+              </a>
+              <a
+                href="https://instagram.com/info.umptkin"
+                target="_blank"
+                rel="noreferrer"
+                className="px-3 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded-xl flex items-center gap-1.5 transition-colors"
+              >
+                <span className="text-rose-600 font-extrabold text-xs">IG</span>
+                <span>{CONTACT_INFO.instagramInfo}</span>
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 

@@ -34,12 +34,12 @@ export const AppProvider = ({ children }) => {
 
   // Data Collections (synced with localStorage)
   const [packages, setPackages] = useState(() => {
-    const saved = localStorage.getItem('umptkin_packages');
+    const saved = localStorage.getItem('umptkin_packages_v2');
     return saved ? JSON.parse(saved) : INITIAL_PACKAGES;
   });
 
   const [unlockedPackages, setUnlockedPackages] = useState(() => {
-    const saved = localStorage.getItem('umptkin_unlocked_packages');
+    const saved = localStorage.getItem('umptkin_unlocked_packages_v2');
     return saved ? JSON.parse(saved) : ['TO-01'];
   });
 
@@ -95,11 +95,11 @@ export const AppProvider = ({ children }) => {
   }, [currentUser]);
 
   useEffect(() => {
-    localStorage.setItem('umptkin_packages', JSON.stringify(packages));
+    localStorage.setItem('umptkin_packages_v2', JSON.stringify(packages));
   }, [packages]);
 
   useEffect(() => {
-    localStorage.setItem('umptkin_unlocked_packages', JSON.stringify(unlockedPackages));
+    localStorage.setItem('umptkin_unlocked_packages_v2', JSON.stringify(unlockedPackages));
   }, [unlockedPackages]);
 
   useEffect(() => {

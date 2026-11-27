@@ -82,19 +82,24 @@ export const Footer = () => {
 
           {/* Contact & Support */}
           <div className="space-y-2.5">
-            <h4 className="text-[11px] font-bold uppercase tracking-wider text-white">Layanan Informasi</h4>
+            <h4 className="text-[11px] font-bold uppercase tracking-wider text-white">Kontak & Media Resmi</h4>
             <ul className="space-y-2 text-xs text-slate-400">
-              <li className="flex items-start gap-2">
-                <MapPin className="w-3.5 h-3.5 text-teal-400 shrink-0 mt-0.5" />
-                <span>Gedung Edu Center Lt. 3, Jakarta Selatan, Indonesia</span>
-              </li>
               <li className="flex items-center gap-2">
-                <Mail className="w-3.5 h-3.5 text-teal-400 shrink-0" />
-                <span>halo@tryoutumptkin.ac.id</span>
+                <span className="font-semibold text-emerald-400">Lenny Agustin, S. Pd.</span>
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="w-3.5 h-3.5 text-teal-400 shrink-0" />
-                <span>+62 812-3456-7890</span>
+                <a href="https://wa.me/6288247854631" target="_blank" rel="noreferrer" className="hover:text-emerald-400 transition-colors">
+                  WA: 0882-4785-4631
+                </a>
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="text-teal-400 font-bold text-xs">IG</span>
+                <span>@info.umptkin • @lennyagustin10</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="text-rose-400 font-bold text-xs">YT</span>
+                <span>Lenny Agustin</span>
               </li>
             </ul>
           </div>

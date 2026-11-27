@@ -3,8 +3,8 @@
 export const INITIAL_PACKAGES = [
   {
     id: 'TO-01',
-    name: 'Tryout UMPTKIN Gratis - Simulasi Mandiri',
-    description: 'Paket simulasi dasar untuk mengenal format soal UMPTKIN terbaru. Dilengkapi dengan timer real-time dan analisis skor instan.',
+    name: 'Simulasi Mandiri Gratis UMPTKIN',
+    description: 'Simulasi latihan mandiri untuk adaptasi sistem SSE UMPTKIN. Dilengkapi countdown timer real-time dan analisis evaluasi nilai instan.',
     questionCount: 20,
     durationMinutes: 30,
     price: 0,
@@ -18,68 +18,143 @@ export const INITIAL_PACKAGES = [
       { name: 'Penalaran Matematika', count: 5 }
     ],
     rules: [
-      'Ujian terdiri dari 4 subtes dengan total 20 butir soal.',
-      'Waktu pengerjaan adalah 30 menit tanpa jeda.',
+      'Ujian terdiri dari 4 subtes materi standar UMPTKIN.',
+      'Waktu pengerjaan 30 menit tanpa jeda.',
       'Sistem penilaian: Benar (+5), Salah (0), Kosong (0).',
-      'Peserta dapat berpindah soal secara acak dan menandai ragu-ragu.',
-      'Ujian akan otomatis tersubmit apabila waktu countdown telah habis.'
+      'Peserta dapat berpindah soal secara fleksibel dan menandai ragu-ragu.',
+      'Ujian akan otomatis tersubmit apabila waktu countdown habis.'
     ],
-    startDate: '2025-01-01',
-    endDate: '2025-12-31'
+    startDate: '2026-01-01',
+    endDate: '2026-12-31'
   },
   {
-    id: 'TO-02',
-    name: 'Tryout UMPTKIN Intensif - Standar Nasional',
-    description: 'Simulasi ujian komprehensif dengan tingkat kesulitan HOTS (Higher Order Thinking Skills). Dilengkapi pembahasan detail dan perankingan nasional.',
-    questionCount: 20,
-    durationMinutes: 40,
-    price: 35000,
+    id: 'TO-VIP-01',
+    name: 'Simulasi VIP UMPTKIN 2026 (Paket Utama)',
+    description: 'Simulasi Akbar menggunakan Website dengan vibes ujian asli SSE UMPTKIN 2026. Durasi 120 Menit dengan 100 Soal HOTS lengkap, pembahasan mendalam, dan leaderboard nasional.',
+    questionCount: 100,
+    durationMinutes: 120,
+    price: 10000,
+    originalPrice: 25000,
     isFree: false,
-    badge: 'Terpopuler',
+    badge: 'Paling Diminati',
     status: 'Aktif',
     subtests: [
-      { name: 'Tes Potensi Skolastik (TPS)', count: 5 },
-      { name: 'Literasi Bahasa Indonesia', count: 5 },
-      { name: 'Literasi Bahasa Inggris', count: 5 },
-      { name: 'Penalaran Matematika', count: 5 }
+      { name: 'Tes Potensi Skolastik (TPS)', count: 25 },
+      { name: 'Literasi Bahasa Indonesia', count: 25 },
+      { name: 'Literasi Bahasa Inggris', count: 25 },
+      { name: 'Penalaran Matematika', count: 25 }
     ],
     rules: [
-      'Soal dirancang sesuai kisi-kisi resmi Panitia Pusat UMPTKIN terkini.',
-      'Waktu pengerjaan 40 menit.',
-      'Setiap jawaban benar bernilai +5 (Skor total 0-100).',
-      'Mendapatkan akses penuh ke kunci jawaban dan e-pembahasan komprehensif.',
-      'Data hasil langsung diperhitungkan dalam Leaderboard Nasional.'
+      'Tampilan antarmuka 100% identik dengan Sistem Seleksi Elektronik (SSE) UMPTKIN 2026.',
+      'Durasi 120 Menit dengan 100 Soal berstandar Panitia Pusat PMB PTKIN.',
+      'Dilengkapi countdown timer otomatis dan palet navigasi 100 nomor soal.',
+      'Analisis passing grade jurusan PTKIN dan pembahasan lengkap tiap nomor soal.',
+      'Peringkat real-time di Leaderboard Nasional peserta se-Indonesia.'
     ],
-    startDate: '2025-02-01',
-    endDate: '2025-12-31'
+    startDate: '2026-02-01',
+    endDate: '2026-12-31'
   },
   {
-    id: 'TO-03',
-    name: 'Tryout UMPTKIN Premium - Akbar & Prediksi Lulus',
-    description: 'Paket simulasi akbar berstandar Computer-Based Test (SSE UMPTKIN) dilengkapi prediktor peluang kelulusan program studi pilihan dan sertifikat digital.',
-    questionCount: 20,
-    durationMinutes: 45,
-    price: 75000,
+    id: 'TO-VIP-02',
+    name: 'Simulasi 3 VIP UMPTKIN 2026 (Komprehensif)',
+    description: 'Simulasi tingkat lanjut dengan bank soal super komprehensif 120 Soal dan durasi 120 Menit. Prediksi akurat peluang lolos di UIN, IAIN, dan STAIN impian.',
+    questionCount: 120,
+    durationMinutes: 120,
+    price: 15000,
+    originalPrice: 35000,
     isFree: false,
-    badge: 'Eksklusif',
+    badge: 'VIP Maksimal',
     status: 'Aktif',
     subtests: [
-      { name: 'Tes Potensi Skolastik (TPS)', count: 5 },
-      { name: 'Literasi Bahasa Indonesia', count: 5 },
-      { name: 'Literasi Bahasa Inggris', count: 5 },
-      { name: 'Penalaran Matematika', count: 5 }
+      { name: 'Tes Potensi Skolastik (TPS)', count: 30 },
+      { name: 'Literasi Bahasa Indonesia', count: 30 },
+      { name: 'Literasi Bahasa Inggris', count: 30 },
+      { name: 'Penalaran Matematika', count: 30 }
     ],
     rules: [
-      'Format ujian Computer-Based Test identik dengan Sistem Seleksi Elektronik (SSE).',
-      'Waktu pengerjaan 45 menit.',
-      'Dilengkapi radar analisis kelemahan subtes dan rekomendasi belajar cerdas.',
-      'Sertifikat kelulusan tryout ber-barcode resmi demo.',
-      'Prediktor passing grade ke PTKIN favorit (UIN Jakarta, UIN Jogja, dll).'
+      'Format Computer-Based Test (SSE UMPTKIN 2026) terlengkap dengan 120 Soal.',
+      'Durasi 120 Menit untuk menguji ketahanan dan manajemen waktu pengerjaan.',
+      'Dilengkapi radar kelemahan subtes dan rekomendasi strategi belajar cerdas.',
+      'Sertifikat hasil simulasi digital ber-barcode resmi demo.',
+      'Akses pembahasan video & e-book solusi cepat.'
     ],
-    startDate: '2025-03-01',
-    endDate: '2025-12-31'
+    startDate: '2026-03-01',
+    endDate: '2026-12-31'
   }
 ];
+
+export const PROMO_ITEMS = [
+  {
+    id: 'PRM-01',
+    number: 1,
+    title: 'E-Book Dasar',
+    category: 'E-Book',
+    discountPrice: 45000,
+    originalPrice: 70000,
+    desc: 'Modul rangkuman materi dasar semua subtes UMPTKIN beserta bank rumus praktis.'
+  },
+  {
+    id: 'PRM-02',
+    number: 2,
+    title: 'Ebook Premium',
+    category: 'E-Book',
+    discountPrice: 75000,
+    originalPrice: 100000,
+    desc: 'Ebook kupas tuntas bedah soal HOTS UMPTKIN 5 tahun terakhir plus trik eliminasi cerdas.'
+  },
+  {
+    id: 'PRM-03',
+    number: 3,
+    title: 'Bimbel 3x Pertemuan',
+    category: 'Bimbel Intensif',
+    discountPrice: 50000,
+    originalPrice: null,
+    badge: 'Jadwal Kelas',
+    desc: 'Jadwal: Tanggal 5, 6, 7 Juni pukul 19.30 WIB (Fokus materi Matematika & Bahasa Arab).'
+  },
+  {
+    id: 'PRM-04',
+    number: 4,
+    title: 'Bimbel 3x + Ebook Premium',
+    category: 'Paket Hemat Combo',
+    discountPrice: 100000,
+    originalPrice: 150000,
+    desc: 'Paket terlengkap: Ikuti 3x kelas interaktif live plus akses selamanya ke Ebook Premium.'
+  },
+  {
+    id: 'PRM-05',
+    number: 5,
+    title: 'Simulasi 2 VIP (website)',
+    category: 'Simulasi Website',
+    discountPrice: 10000,
+    originalPrice: 25000,
+    badge: '100 Soal + Timer 120 Menit',
+    desc: 'Simulasi resmi menggunakan website dengan 100 soal standar SSE UMPTKIN 2026.',
+    packageId: 'TO-VIP-01'
+  },
+  {
+    id: 'PRM-06',
+    number: 6,
+    title: 'Simulasi 3 VIP (website)',
+    category: 'Simulasi Website',
+    discountPrice: 15000,
+    originalPrice: 35000,
+    badge: '120 Soal + Timer 120 Menit',
+    desc: 'Simulasi intensif 120 soal komprehensif dalam durasi 120 menit real-time.',
+    packageId: 'TO-VIP-02'
+  }
+];
+
+export const CONTACT_INFO = {
+  authorName: 'Lenny Agustin, S. Pd.',
+  whatsapp: '0882-4785-4631',
+  whatsappUrl: 'https://wa.me/6288247854631',
+  instagramInfo: '@info.umptkin',
+  instagramPersonal: '@lennyagustin10',
+  youtube: 'Lenny Agustin',
+  targetYear: '2026',
+  programTitle: 'SIMULASI VIP UMPTKIN 2026'
+};
 
 export const INITIAL_QUESTIONS = [
   // --- SUBTES 1: Tes Potensi Skolastik (TPS) ---
