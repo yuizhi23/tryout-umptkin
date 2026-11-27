@@ -83,6 +83,71 @@ export const INITIAL_PACKAGES = [
   }
 ];
 
+export const REGULAR_PACKAGES = [
+  {
+    id: 'REG-01',
+    number: 1,
+    title: 'E-Book Dasar',
+    category: 'E-Book',
+    price: 70000,
+    discountPrice: null,
+    isBestSeller: false,
+    desc: 'Buku panduan digital dasar pemahaman subtes dan materi inti seleksi SSE UMPTKIN.'
+  },
+  {
+    id: 'REG-02',
+    number: 2,
+    title: 'E-Book Premium',
+    category: 'E-Book',
+    price: 100000,
+    discountPrice: null,
+    isBestSeller: false,
+    desc: 'Kumpulan bank soal HOTS terlengkap 5 tahun terakhir, trik kilat menjawab, dan kunci pembahasan.'
+  },
+  {
+    id: 'REG-03',
+    number: 3,
+    title: 'Bimbel 1x Pertemuan',
+    category: 'Bimbel Satuan',
+    price: 15000,
+    discountPrice: null,
+    isBestSeller: false,
+    desc: 'Sesi bimbingan belajar tatap muka daring 1x pertemuan interaktif bersama tutor berpengalaman.'
+  },
+  {
+    id: 'REG-04',
+    number: 4,
+    title: 'Bimbel 4x Pertemuan',
+    category: 'Bimbel Intensif',
+    price: 60000,
+    discountPrice: null,
+    isBestSeller: false,
+    desc: 'Paket bimbingan terstruktur 4x pertemuan mendalam mengupas tuntas semua materi dan latihan soal.'
+  },
+  {
+    id: 'REG-05',
+    number: 5,
+    title: 'Bimbel sampai Ujian',
+    category: 'Bimbel Garansi',
+    price: 120000,
+    discountPrice: null,
+    isBestSeller: false,
+    desc: 'Pendampingan belajar intensif tanpa batas pertemuan hingga hari H pelaksanaan ujian UMPTKIN.'
+  },
+  {
+    id: 'REG-06',
+    number: 6,
+    title: 'E-Book Premium dan Bimbel sampai Ujian',
+    category: 'Paket Komplit VIP',
+    price: 200000,
+    discountPrice: 130000,
+    isBestSeller: true,
+    badge: 'BEST SELLER',
+    promoTag: 'PROMO',
+    desc: 'Paket all-in-one terlengkap: E-Book Premium + Bimbingan intensif sampai hari ujian!'
+  }
+];
+
 export const PROMO_ITEMS = [
   {
     id: 'PRM-01',

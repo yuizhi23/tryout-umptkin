@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useApp } from '../../context/AppContext';
 import { PaymentModal } from '../../components/common/PaymentModal';
-import { PROMO_ITEMS, CONTACT_INFO } from '../../data/initialData';
+import { PROMO_ITEMS, REGULAR_PACKAGES, CONTACT_INFO } from '../../data/initialData';
 import {
   GraduationCap,
   Sparkles,
@@ -21,7 +21,8 @@ import {
   Flame,
   Phone,
   MessageCircle,
-  Volume2
+  Volume2,
+  ThumbsUp
 } from 'lucide-react';
 
 export const LandingPage = () => {
@@ -423,6 +424,136 @@ export const LandingPage = () => {
               </div>
             );
           })}
+        </div>
+      </section>
+
+      {/* 3.4 SECTION PAKET UMPTKIN (KATALOG RESMI) */}
+      <section className="py-14 sm:py-18 bg-gradient-to-b from-white via-teal-50/20 to-emerald-50/30 border-t border-slate-200/80">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-2xl mx-auto mb-10">
+            <span className="text-[11px] font-bold uppercase tracking-wider text-teal-800 bg-teal-100/70 px-3 py-1 rounded-full border border-teal-200">
+              Katalog Program Bimbingan & Buku
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-black text-slate-900 mt-2.5 tracking-tight uppercase">
+              PAKET UMPTKIN
+            </h2>
+            <p className="text-xs sm:text-sm text-slate-600 mt-1.5">
+              Pilihan lengkap modul pembelajaran, sesi bimbingan tatap muka online, hingga garansi pendampingan sampai ujian.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {REGULAR_PACKAGES.map((pkg) => {
+              const isBestSeller = pkg.isBestSeller;
+              return (
+                <div
+                  key={pkg.id}
+                  className={`relative rounded-2xl p-5.5 transition-all flex flex-col justify-between ${
+                    isBestSeller
+                      ? 'bg-gradient-to-b from-emerald-900 to-teal-950 text-white shadow-xl shadow-emerald-950/20 border-2 border-emerald-400 ring-2 ring-emerald-500/20'
+                      : 'bg-white rounded-2xl border border-emerald-200/90 shadow-xs hover:shadow-md hover:border-emerald-400'
+                  }`}
+                >
+                  {/* Best Seller & Promo Badges */}
+                  {isBestSeller && (
+                    <div className="absolute -top-3.5 right-4 flex items-center gap-1.5">
+                      <span className="bg-rose-600 text-white text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-0.5 rounded-full shadow-md flex items-center gap-1">
+                        <Flame className="w-3 h-3 fill-amber-300 text-amber-300" />
+                        PROMO
+                      </span>
+                      <span className="bg-amber-400 text-slate-950 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-0.5 rounded-full shadow-md flex items-center gap-1">
+                        <ThumbsUp className="w-3 h-3" />
+                        BEST SELLER
+                      </span>
+                    </div>
+                  )}
+
+                  <div>
+                    <div className="flex items-center gap-3 mb-3">
+                      <span
+                        className={`w-7 h-7 rounded-full font-black text-xs flex items-center justify-center shrink-0 shadow-xs ${
+                          isBestSeller ? 'bg-emerald-400 text-slate-950' : 'bg-emerald-700 text-white'
+                        }`}
+                      >
+                        {pkg.number}
+                      </span>
+                      <div>
+                        <span
+                          className={`text-[10px] font-bold uppercase tracking-wider ${
+                            isBestSeller ? 'text-emerald-300' : 'text-emerald-700'
+                          }`}
+                        >
+                          {pkg.category}
+                        </span>
+                        <h4
+                          className={`text-sm sm:text-base font-extrabold leading-tight ${
+                            isBestSeller ? 'text-white' : 'text-slate-900'
+                          }`}
+                        >
+                          {pkg.title}
+                        </h4>
+                      </div>
+                    </div>
+
+                    <p
+                      className={`text-xs leading-relaxed mb-5 ${
+                        isBestSeller ? 'text-slate-300' : 'text-slate-500'
+                      }`}
+                    >
+                      {pkg.desc}
+                    </p>
+                  </div>
+
+                  <div
+                    className={`pt-3.5 border-t flex items-center justify-between gap-3 ${
+                      isBestSeller ? 'border-emerald-800' : 'border-slate-100'
+                    }`}
+                  >
+                    <div>
+                      {pkg.discountPrice ? (
+                        <div className="flex items-baseline gap-1.5">
+                          <span className="text-xs text-rose-300 line-through">
+                            Rp {pkg.price.toLocaleString('id-ID')}
+                          </span>
+                          <span className="text-lg sm:text-xl font-black text-amber-300 font-mono">
+                            Rp {pkg.discountPrice.toLocaleString('id-ID')}
+                          </span>
+                        </div>
+                      ) : (
+                        <div className="flex items-baseline gap-1">
+                          <span
+                            className={`text-lg sm:text-xl font-black font-mono ${
+                              isBestSeller ? 'text-emerald-300' : 'text-slate-900'
+                            }`}
+                          >
+                            Rp {pkg.price.toLocaleString('id-ID')}
+                          </span>
+                        </div>
+                      )}
+                    </div>
+
+                    <a
+                      href={`https://wa.me/6288247854631?text=${encodeURIComponent(
+                        `Halo Kak ${CONTACT_INFO.authorName}, saya ingin mendaftar paket: "${pkg.title}" (Rp ${(
+                          pkg.discountPrice || pkg.price
+                        ).toLocaleString('id-ID')}). Mohon info pendaftarannya.`
+                      )}`}
+                      target="_blank"
+                      rel="noreferrer"
+                      className={`px-3.5 py-1.5 text-xs font-bold rounded-xl transition-all flex items-center gap-1.5 shadow-xs cursor-pointer ${
+                        isBestSeller
+                          ? 'bg-amber-400 hover:bg-amber-300 text-slate-950 font-extrabold'
+                          : 'bg-emerald-600 hover:bg-emerald-700 text-white'
+                      }`}
+                    >
+                      <MessageCircle className="w-3.5 h-3.5" />
+                      <span>Pilih Paket</span>
+                    </a>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </section>
 
