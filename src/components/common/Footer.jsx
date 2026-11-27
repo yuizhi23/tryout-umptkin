@@ -1,6 +1,6 @@
 import React from 'react';
 import { useApp } from '../../context/AppContext';
-import { ShieldCheck, Mail, Phone, MapPin, Heart, Lock } from 'lucide-react';
+import { ShieldCheck, Mail, Phone, MapPin, Heart, Lock, FileDown } from 'lucide-react';
 import { Logo } from './Logo';
 
 export const Footer = () => {
@@ -53,6 +53,18 @@ export const Footer = () => {
                 <button onClick={() => navigateTo('dashboard')} className="hover:text-teal-400 transition-colors">
                   Dashboard Peserta
                 </button>
+              </li>
+              <li className="pt-1 border-t border-slate-800/80">
+                <a
+                  href="./DOKUMENTASI_FITUR_LENGKAP_TRYOUT_UMPTKIN.pdf"
+                  download="DOKUMENTASI_FITUR_LENGKAP_TRYOUT_UMPTKIN.pdf"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-teal-400 hover:text-teal-300 font-semibold transition-colors flex items-center gap-1.5"
+                >
+                  <FileDown className="w-3.5 h-3.5" />
+                  <span>Download PDF Fitur</span>
+                </a>
               </li>
             </ul>
           </div>

@@ -10,6 +10,8 @@ from reportlab.pdfgen import canvas
 
 pdf_public_path = '/Users/yukiekiyoshi/Downloads/tryout/public/DOKUMENTASI_FITUR_TRYOUT_UMPTKIN.pdf'
 pdf_workspace_path = '/Users/yukiekiyoshi/Downloads/tryout/DOKUMENTASI_FITUR_TRYOUT_UMPTKIN.pdf'
+pdf_fresh_public_path = '/Users/yukiekiyoshi/Downloads/tryout/public/DOKUMENTASI_FITUR_LENGKAP_TRYOUT_UMPTKIN.pdf'
+pdf_fresh_workspace_path = '/Users/yukiekiyoshi/Downloads/tryout/DOKUMENTASI_FITUR_LENGKAP_TRYOUT_UMPTKIN.pdf'
 
 class NumberedCanvas(canvas.Canvas):
     def __init__(self, *args, **kwargs):
@@ -364,6 +366,8 @@ def build_pdf():
 
     doc.build(story, canvasmaker=NumberedCanvas)
     shutil.copyfile(pdf_public_path, pdf_workspace_path)
+    shutil.copyfile(pdf_public_path, pdf_fresh_public_path)
+    shutil.copyfile(pdf_public_path, pdf_fresh_workspace_path)
     print(f'Full feature documentation PDF generated successfully ({os.path.getsize(pdf_public_path)} bytes).')
 
 if __name__ == '__main__':
