@@ -12,7 +12,9 @@ import {
   RotateCcw,
   Menu,
   X,
-  Target
+  Target,
+  Sparkles,
+  Users2
 } from 'lucide-react';
 
 export const Navbar = () => {
@@ -32,90 +34,97 @@ export const Navbar = () => {
   // If in exam screen, render a minimalist clean header
   if (currentPage === 'exam') return null;
 
+  const scrollToGrup = () => {
+    navigateTo('landing');
+    setTimeout(() => {
+      const el = document.getElementById('grup-komunitas');
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }, 150);
+  };
+
   return (
     <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-xs">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-16 gap-3">
           
-          {/* 1. Left: Logo & Brand */}
+          {/* 1. Left: Logo & Brand Identity */}
           <div
-            className="flex items-center gap-3 cursor-pointer select-none group"
+            className="flex items-center gap-2.5 sm:gap-3 cursor-pointer select-none group shrink-0"
             onClick={() => navigateTo(mode === 'admin' ? 'admin-dashboard' : 'landing')}
           >
-            <Logo size="md" className="group-hover:scale-105 transition-transform" />
+            <Logo size="sm" className="sm:hidden" />
+            <Logo size="md" className="hidden sm:block group-hover:scale-105 transition-transform" />
             <div className="flex flex-col justify-center">
-              <div className="flex items-center gap-2">
-                <span className="font-bold text-base sm:text-[17px] tracking-tight text-slate-900 leading-none">
+              <div className="flex items-center gap-1.5 sm:gap-2">
+                <span className="font-extrabold text-sm sm:text-base tracking-tight text-slate-900 leading-none">
                   Tryout <span className="text-teal-600">UMPTKIN</span>
                 </span>
-                <span className="hidden sm:inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-semibold tracking-wide bg-teal-50 text-teal-700 border border-teal-200/80 leading-none">
+                <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[9px] sm:text-[10px] font-bold tracking-wide bg-teal-50 text-teal-700 border border-teal-200/80 leading-none">
                   SSE 2026
                 </span>
               </div>
-              <p className="text-[11px] text-slate-500 hidden sm:block mt-0.5 leading-none font-normal">
-                Simulasi Ujian Masuk PTKIN Nasional
+              <p className="text-[10px] sm:text-[11px] text-slate-400 hidden sm:block mt-0.5 leading-none font-normal">
+                Simulasi Ujian Masuk PTKIN
               </p>
             </div>
           </div>
 
-          {/* 2. Middle: Navigation Links (Participant Mode) */}
+          {/* 2. Middle: Navigation Links (Clean & Consistent Text Nav) */}
           {mode === 'participant' && (
-            <nav className="hidden md:flex items-center gap-1">
+            <nav className="hidden lg:flex items-center gap-1">
               <button
                 type="button"
                 onClick={() => navigateTo('landing')}
-                className={`px-3 py-1.5 text-xs font-semibold rounded-lg transition-colors ${
+                className={`px-3 py-1.5 text-xs font-semibold rounded-lg transition-colors cursor-pointer ${
                   currentPage === 'landing'
-                    ? 'text-teal-700 bg-teal-50'
+                    ? 'text-teal-700 bg-teal-50/80 font-bold'
                     : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100/70'
                 }`}
               >
                 Beranda
               </button>
+
               <button
                 type="button"
                 onClick={() => navigateTo('packages')}
-                className={`px-3 py-1.5 text-xs font-semibold rounded-lg transition-colors ${
+                className={`px-3 py-1.5 text-xs font-semibold rounded-lg transition-colors cursor-pointer ${
                   currentPage === 'packages'
-                    ? 'text-teal-700 bg-teal-50'
+                    ? 'text-teal-700 bg-teal-50/80 font-bold'
                     : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100/70'
                 }`}
               >
                 Paket Tryout
               </button>
+
               <button
                 type="button"
                 onClick={() => navigateTo('promo')}
-                className={`px-3 py-1.5 text-xs font-bold rounded-lg transition-all flex items-center gap-1.5 border ${
+                className={`px-3 py-1.5 text-xs font-semibold rounded-lg transition-colors flex items-center gap-1.5 cursor-pointer ${
                   currentPage === 'promo'
-                    ? 'bg-amber-400 text-slate-950 border-amber-500 shadow-sm'
-                    : 'text-amber-800 bg-amber-50/80 hover:bg-amber-100 border-amber-200'
+                    ? 'text-amber-800 bg-amber-50 font-bold border border-amber-200/80'
+                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100/70'
                 }`}
               >
-                <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-ping" />
+                <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse" />
                 <span>Promo Spesial</span>
               </button>
+
               <button
                 type="button"
-                onClick={() => {
-                  navigateTo('landing');
-                  setTimeout(() => {
-                    const el = document.getElementById('grup-komunitas');
-                    if (el) el.scrollIntoView({ behavior: 'smooth' });
-                  }, 150);
-                }}
-                className="px-3 py-1.5 text-xs font-semibold rounded-lg text-emerald-700 bg-emerald-50 hover:bg-emerald-100 transition-colors flex items-center gap-1.5 border border-emerald-200/60"
+                onClick={scrollToGrup}
+                className="px-3 py-1.5 text-xs font-semibold text-slate-600 hover:text-emerald-700 hover:bg-emerald-50/60 rounded-lg transition-colors flex items-center gap-1.5 cursor-pointer"
               >
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                <span>Grup Komunitas (Rp 0)</span>
+                <Users2 className="w-3.5 h-3.5 text-emerald-600" />
+                <span>Grup Belajar (Rp 0)</span>
               </button>
+
               {currentUser && (
                 <button
                   type="button"
                   onClick={() => navigateTo('dashboard')}
-                  className={`px-3 py-1.5 text-xs font-semibold rounded-lg transition-colors ${
+                  className={`px-3 py-1.5 text-xs font-semibold rounded-lg transition-colors cursor-pointer ${
                     currentPage === 'dashboard'
-                      ? 'text-teal-700 bg-teal-50'
+                      ? 'text-teal-700 bg-teal-50/80 font-bold'
                       : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100/70'
                   }`}
                 >
@@ -126,44 +135,44 @@ export const Navbar = () => {
           )}
 
           {/* 3. Right: Mode Switcher, Reset Demo & Profile */}
-          <div className="flex items-center gap-2.5 sm:gap-3">
+          <div className="flex items-center gap-2 sm:gap-2.5 shrink-0">
             
             {/* Mode Switcher Toggle (Peserta vs Admin) */}
-            <div className="bg-slate-100/90 p-1 rounded-xl flex items-center border border-slate-200/80">
+            <div className="bg-slate-100 p-0.5 sm:p-1 rounded-xl flex items-center border border-slate-200/80">
               <button
                 type="button"
                 onClick={() => switchMode('participant')}
-                className={`flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-semibold transition-all ${
+                className={`flex items-center gap-1 px-2 sm:px-2.5 py-1 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
                   mode === 'participant'
-                    ? 'bg-white text-teal-700 shadow-xs'
+                    ? 'bg-white text-teal-700 shadow-2xs'
                     : 'text-slate-500 hover:text-slate-800'
                 }`}
               >
                 <User className="w-3.5 h-3.5" />
-                <span>Peserta</span>
+                <span className="hidden sm:inline">Peserta</span>
               </button>
               <button
                 type="button"
                 onClick={() => switchMode('admin')}
-                className={`flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-semibold transition-all ${
+                className={`flex items-center gap-1 px-2 sm:px-2.5 py-1 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
                   mode === 'admin'
-                    ? 'bg-teal-700 text-white shadow-xs'
+                    ? 'bg-teal-700 text-white shadow-2xs'
                     : 'text-slate-500 hover:text-slate-800'
                 }`}
               >
                 <Shield className="w-3.5 h-3.5" />
-                <span>Admin</span>
+                <span className="hidden sm:inline">Admin</span>
               </button>
             </div>
 
-            {/* Quick Demo Reset Button */}
+            {/* Quick Demo Reset Button (Desktop) */}
             <button
               type="button"
               onClick={resetDemoData}
               title="Reset data demo ke kondisi awal"
-              className="hidden lg:flex items-center gap-1 px-2.5 py-1.5 text-xs text-slate-500 hover:text-slate-800 hover:bg-slate-100 rounded-lg transition-colors font-medium border border-transparent hover:border-slate-200"
+              className="hidden xl:flex items-center gap-1 px-2 py-1 text-[11px] text-slate-400 hover:text-slate-700 hover:bg-slate-100 rounded-lg transition-colors cursor-pointer"
             >
-              <RotateCcw className="w-3.5 h-3.5 text-slate-400" />
+              <RotateCcw className="w-3 h-3 text-slate-400" />
               <span>Reset</span>
             </button>
 
@@ -173,16 +182,16 @@ export const Navbar = () => {
                 <button
                   type="button"
                   onClick={() => setIsProfileOpen(!isProfileOpen)}
-                  className="flex items-center gap-2 p-1 rounded-xl hover:bg-slate-100 transition-colors border border-transparent hover:border-slate-200"
+                  className="flex items-center gap-2 p-1 rounded-xl hover:bg-slate-100 transition-colors border border-transparent hover:border-slate-200 cursor-pointer"
                 >
                   <img
                     src={currentUser.avatar}
                     alt={currentUser.name}
-                    className="w-8 h-8 rounded-full object-cover ring-2 ring-teal-500/20"
+                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-full object-cover ring-2 ring-teal-500/20"
                   />
-                  <div className="hidden xl:block text-left leading-tight">
-                    <p className="text-xs font-bold text-slate-800 truncate max-w-[110px]">{currentUser.name}</p>
-                    <p className="text-[10px] text-slate-400 truncate max-w-[110px]">{currentUser.targetPTKIN.replace('UIN ', '')}</p>
+                  <div className="hidden 2xl:block text-left leading-tight">
+                    <p className="text-xs font-bold text-slate-800 truncate max-w-[100px]">{currentUser.name}</p>
+                    <p className="text-[10px] text-slate-400 truncate max-w-[100px]">{currentUser.targetPTKIN.replace('UIN ', '')}</p>
                   </div>
                   <ChevronDown className="w-3.5 h-3.5 text-slate-400 hidden sm:block" />
                 </button>
@@ -207,7 +216,7 @@ export const Navbar = () => {
                           setIsProfileOpen(false);
                           navigateTo('dashboard');
                         }}
-                        className="w-full flex items-center gap-2 px-3 py-2 text-xs text-slate-700 hover:text-teal-700 hover:bg-teal-50/50 rounded-lg transition-colors font-medium"
+                        className="w-full flex items-center gap-2 px-3 py-2 text-xs text-slate-700 hover:text-teal-700 hover:bg-teal-50/50 rounded-lg transition-colors font-medium cursor-pointer"
                       >
                         <LayoutDashboard className="w-4 h-4 text-teal-600" />
                         Dashboard Peserta
@@ -217,17 +226,17 @@ export const Navbar = () => {
                           setIsProfileOpen(false);
                           navigateTo('profile');
                         }}
-                        className="w-full flex items-center gap-2 px-3 py-2 text-xs text-slate-700 hover:text-teal-700 hover:bg-teal-50/50 rounded-lg transition-colors font-medium"
+                        className="w-full flex items-center gap-2 px-3 py-2 text-xs text-slate-700 hover:text-teal-700 hover:bg-teal-50/50 rounded-lg transition-colors font-medium cursor-pointer"
                       >
-                        <Target className="w-4 h-4 text-teal-600" />
-                        Profil & Pilihan Prodi
+                        <User className="w-4 h-4 text-teal-600" />
+                        Profil Peserta
                       </button>
                       <button
                         onClick={() => {
                           setIsProfileOpen(false);
                           navigateTo('ranking');
                         }}
-                        className="w-full flex items-center gap-2 px-3 py-2 text-xs text-slate-700 hover:text-teal-700 hover:bg-teal-50/50 rounded-lg transition-colors font-medium"
+                        className="w-full flex items-center gap-2 px-3 py-2 text-xs text-slate-700 hover:text-teal-700 hover:bg-teal-50/50 rounded-lg transition-colors font-medium cursor-pointer"
                       >
                         <Trophy className="w-4 h-4 text-amber-500" />
                         Peringkat Nasional
@@ -240,7 +249,7 @@ export const Navbar = () => {
                           setIsProfileOpen(false);
                           logout();
                         }}
-                        className="w-full flex items-center gap-2 px-3 py-2 text-xs text-rose-600 hover:bg-rose-50 rounded-lg transition-colors font-medium"
+                        className="w-full flex items-center gap-2 px-3 py-2 text-xs text-rose-600 hover:bg-rose-50 rounded-lg transition-colors font-medium cursor-pointer"
                       >
                         <LogOut className="w-4 h-4" />
                         Keluar Akun
@@ -250,38 +259,42 @@ export const Navbar = () => {
                 )}
               </div>
             ) : (
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-1.5 sm:gap-2">
                 <button
                   type="button"
                   onClick={() => navigateTo('login')}
-                  className="px-3 py-1.5 text-xs font-semibold text-slate-700 hover:text-teal-700 hover:bg-slate-100 rounded-lg transition-colors"
+                  className="px-2.5 sm:px-3 py-1.5 text-xs font-semibold text-slate-700 hover:text-teal-700 hover:bg-slate-50 rounded-lg transition-colors cursor-pointer"
                 >
                   Masuk
                 </button>
                 <button
                   type="button"
                   onClick={() => navigateTo('register')}
-                  className="px-3.5 py-1.5 text-xs font-semibold text-white bg-teal-600 hover:bg-teal-700 rounded-lg transition-colors shadow-xs"
+                  className="px-3 sm:px-3.5 py-1.5 bg-teal-600 hover:bg-teal-700 text-white font-semibold text-xs rounded-xl shadow-xs transition-colors cursor-pointer"
                 >
                   Daftar
                 </button>
               </div>
             )}
 
-            {/* Mobile menu hamburger toggle */}
+            {/* Mobile Hamburger Button */}
             <button
+              type="button"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden p-1.5 text-slate-600 hover:text-slate-900 rounded-lg hover:bg-slate-100 transition-colors"
+              className="lg:hidden p-1.5 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 cursor-pointer"
+              aria-label="Toggle Navigation Menu"
             >
               {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
+
           </div>
+
         </div>
       </div>
 
       {/* Mobile Menu Dropdown */}
       {isMobileMenuOpen && (
-        <div className="md:hidden border-t border-slate-100 bg-white px-4 pt-3 pb-5 space-y-2 animate-in slide-in-from-top-2">
+        <div className="lg:hidden border-t border-slate-100 bg-white px-4 pt-3 pb-5 space-y-1.5 animate-in slide-in-from-top-2">
           {mode === 'participant' ? (
             <>
               <button
@@ -289,7 +302,7 @@ export const Navbar = () => {
                   navigateTo('promo');
                   setIsMobileMenuOpen(false);
                 }}
-                className="w-full text-left px-3 py-2 rounded-lg text-xs font-bold text-amber-800 bg-amber-50 border border-amber-200 flex items-center justify-between"
+                className="w-full text-left px-3 py-2 rounded-xl text-xs font-bold text-amber-900 bg-amber-50 border border-amber-200 flex items-center justify-between"
               >
                 <span>Halaman Promo Spesial 🔥</span>
                 <span className="text-[10px] bg-rose-600 text-white px-2 py-0.5 rounded-full font-black">HOT</span>
@@ -311,6 +324,16 @@ export const Navbar = () => {
                 className="w-full text-left px-3 py-2 rounded-lg text-xs font-medium text-slate-700 hover:bg-teal-50 hover:text-teal-700"
               >
                 Paket Tryout
+              </button>
+              <button
+                onClick={() => {
+                  scrollToGrup();
+                  setIsMobileMenuOpen(false);
+                }}
+                className="w-full text-left px-3 py-2 rounded-lg text-xs font-medium text-emerald-700 hover:bg-emerald-50 flex items-center justify-between"
+              >
+                <span>Grup Komunitas Belajar</span>
+                <span className="text-[10px] font-bold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded">Rp 0</span>
               </button>
               <button
                 onClick={() => {

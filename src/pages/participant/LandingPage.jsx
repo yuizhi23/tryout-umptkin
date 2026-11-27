@@ -94,7 +94,7 @@ export const LandingPage = () => {
 
   return (
     <div className="min-h-screen bg-slate-50">
-      
+
       {/* 1. HERO SECTION */}
       <section className="relative overflow-hidden pt-12 pb-20 lg:pt-16 lg:pb-28 bg-gradient-to-b from-teal-950 via-slate-900 to-slate-900 text-white">
         {/* Subtle Decorative Ambient Glows */}
@@ -105,10 +105,10 @@ export const LandingPage = () => {
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-            
+
             {/* Left Column: Headlines & CTA (Col 7) */}
             <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
-              
+
               {/* Badge */}
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-400/25 text-teal-300 text-xs font-medium backdrop-blur-xs">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
@@ -185,10 +185,10 @@ export const LandingPage = () => {
             {/* Right Column: Hero Visual Card / CBT Exam Mockup (Col 5) */}
             <div className="lg:col-span-5">
               <div className="relative mx-auto max-w-md lg:max-w-none w-full">
-                
+
                 {/* CBT Window Mockup */}
                 <div className="relative bg-slate-900/95 border border-slate-700/80 rounded-2xl shadow-2xl shadow-slate-950/40 p-5 sm:p-6 backdrop-blur-md">
-                  
+
                   {/* Window Bar Header */}
                   <div className="flex items-center justify-between pb-3.5 border-b border-slate-700/80">
                     <div className="flex items-center gap-2">
@@ -286,7 +286,7 @@ export const LandingPage = () => {
       <section className="-mt-8 sm:-mt-10 relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white rounded-2xl border border-slate-200/90 shadow-lg shadow-slate-900/5 p-6 sm:p-7">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 text-center divide-y lg:divide-y-0 lg:divide-x divide-slate-100">
-            
+
             <div className="pt-2 lg:pt-0">
               <div className="text-2xl sm:text-3xl font-extrabold text-teal-700 font-mono tracking-tight">15.200+</div>
               <p className="text-xs sm:text-sm font-bold text-slate-900 mt-1">Peserta Terdaftar</p>
@@ -337,23 +337,21 @@ export const LandingPage = () => {
             return (
               <div
                 key={pkg.id}
-                className={`relative bg-white rounded-2xl border transition-all duration-200 flex flex-col justify-between p-6 sm:p-7 ${
-                  isPopular
-                    ? 'border-teal-500 shadow-lg shadow-teal-500/10 ring-1 ring-teal-500/20'
-                    : 'border-slate-200 hover:border-slate-300 hover:shadow-md'
-                }`}
+                className={`relative bg-white rounded-2xl border transition-all duration-200 flex flex-col justify-between p-6 sm:p-7 ${isPopular
+                  ? 'border-teal-500 shadow-lg shadow-teal-500/10 ring-1 ring-teal-500/20'
+                  : 'border-slate-200 hover:border-slate-300 hover:shadow-md'
+                  }`}
               >
                 {/* Top Badge */}
                 {pkg.badge && (
                   <div className="absolute -top-3 left-6">
                     <span
-                      className={`text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full shadow-xs ${
-                        pkg.isFree
-                          ? 'bg-slate-800 text-white'
-                          : isPopular
+                      className={`text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full shadow-xs ${pkg.isFree
+                        ? 'bg-slate-800 text-white'
+                        : isPopular
                           ? 'bg-teal-600 text-white'
                           : 'bg-amber-500 text-slate-950'
-                      }`}
+                        }`}
                     >
                       {pkg.badge}
                     </span>
@@ -421,13 +419,12 @@ export const LandingPage = () => {
                   <button
                     type="button"
                     onClick={() => handleStartPackage(pkg)}
-                    className={`w-full py-2.5 px-4 rounded-xl font-bold text-xs transition-all flex items-center justify-center gap-2 cursor-pointer ${
-                      isUnlocked
-                        ? 'bg-teal-600 hover:bg-teal-700 text-white shadow-xs'
-                        : isPopular
+                    className={`w-full py-2.5 px-4 rounded-xl font-bold text-xs transition-all flex items-center justify-center gap-2 cursor-pointer ${isUnlocked
+                      ? 'bg-teal-600 hover:bg-teal-700 text-white shadow-xs'
+                      : isPopular
                         ? 'bg-teal-600 hover:bg-teal-700 text-white shadow-xs'
                         : 'bg-slate-800 hover:bg-slate-900 text-white'
-                    }`}
+                      }`}
                   >
                     {isUnlocked ? (
                       <>
@@ -477,11 +474,10 @@ export const LandingPage = () => {
               return (
                 <div
                   key={pkg.id}
-                  className={`relative rounded-2xl p-5.5 transition-all flex flex-col justify-between ${
-                    isBestSeller
-                      ? 'bg-gradient-to-b from-emerald-900 to-teal-950 text-white shadow-xl shadow-emerald-950/20 border-2 border-emerald-400 ring-2 ring-emerald-500/20'
-                      : 'bg-white rounded-2xl border border-emerald-200/90 shadow-xs hover:shadow-md hover:border-emerald-400'
-                  }`}
+                  className={`relative rounded-2xl p-5.5 transition-all flex flex-col justify-between ${isBestSeller
+                    ? 'bg-gradient-to-b from-emerald-900 to-teal-950 text-white shadow-xl shadow-emerald-950/20 border-2 border-emerald-400 ring-2 ring-emerald-500/20'
+                    : 'bg-white rounded-2xl border border-emerald-200/90 shadow-xs hover:shadow-md hover:border-emerald-400'
+                    }`}
                 >
                   {/* Best Seller & Promo Badges */}
                   {isBestSeller && (
@@ -500,24 +496,21 @@ export const LandingPage = () => {
                   <div>
                     <div className="flex items-center gap-3 mb-3">
                       <span
-                        className={`w-7 h-7 rounded-full font-black text-xs flex items-center justify-center shrink-0 shadow-xs ${
-                          isBestSeller ? 'bg-emerald-400 text-slate-950' : 'bg-emerald-700 text-white'
-                        }`}
+                        className={`w-7 h-7 rounded-full font-black text-xs flex items-center justify-center shrink-0 shadow-xs ${isBestSeller ? 'bg-emerald-400 text-slate-950' : 'bg-emerald-700 text-white'
+                          }`}
                       >
                         {pkg.number}
                       </span>
                       <div>
                         <span
-                          className={`text-[10px] font-bold uppercase tracking-wider ${
-                            isBestSeller ? 'text-emerald-300' : 'text-emerald-700'
-                          }`}
+                          className={`text-[10px] font-bold uppercase tracking-wider ${isBestSeller ? 'text-emerald-300' : 'text-emerald-700'
+                            }`}
                         >
                           {pkg.category}
                         </span>
                         <h4
-                          className={`text-sm sm:text-base font-extrabold leading-tight ${
-                            isBestSeller ? 'text-white' : 'text-slate-900'
-                          }`}
+                          className={`text-sm sm:text-base font-extrabold leading-tight ${isBestSeller ? 'text-white' : 'text-slate-900'
+                            }`}
                         >
                           {pkg.title}
                         </h4>
@@ -525,18 +518,16 @@ export const LandingPage = () => {
                     </div>
 
                     <p
-                      className={`text-xs leading-relaxed mb-5 ${
-                        isBestSeller ? 'text-slate-300' : 'text-slate-500'
-                      }`}
+                      className={`text-xs leading-relaxed mb-5 ${isBestSeller ? 'text-slate-300' : 'text-slate-500'
+                        }`}
                     >
                       {pkg.desc}
                     </p>
                   </div>
 
                   <div
-                    className={`pt-3.5 border-t flex items-center justify-between gap-3 ${
-                      isBestSeller ? 'border-emerald-800' : 'border-slate-100'
-                    }`}
+                    className={`pt-3.5 border-t flex items-center justify-between gap-3 ${isBestSeller ? 'border-emerald-800' : 'border-slate-100'
+                      }`}
                   >
                     <div>
                       {pkg.discountPrice ? (
@@ -551,9 +542,8 @@ export const LandingPage = () => {
                       ) : (
                         <div className="flex items-baseline gap-1">
                           <span
-                            className={`text-lg sm:text-xl font-black font-mono ${
-                              isBestSeller ? 'text-emerald-300' : 'text-slate-900'
-                            }`}
+                            className={`text-lg sm:text-xl font-black font-mono ${isBestSeller ? 'text-emerald-300' : 'text-slate-900'
+                              }`}
                           >
                             Rp {pkg.price.toLocaleString('id-ID')}
                           </span>
@@ -569,11 +559,10 @@ export const LandingPage = () => {
                       )}`}
                       target="_blank"
                       rel="noreferrer"
-                      className={`px-3.5 py-1.5 text-xs font-bold rounded-xl transition-all flex items-center gap-1.5 shadow-xs cursor-pointer ${
-                        isBestSeller
-                          ? 'bg-amber-400 hover:bg-amber-300 text-slate-950 font-extrabold'
-                          : 'bg-emerald-600 hover:bg-emerald-700 text-white'
-                      }`}
+                      className={`px-3.5 py-1.5 text-xs font-bold rounded-xl transition-all flex items-center gap-1.5 shadow-xs cursor-pointer ${isBestSeller
+                        ? 'bg-amber-400 hover:bg-amber-300 text-slate-950 font-extrabold'
+                        : 'bg-emerald-600 hover:bg-emerald-700 text-white'
+                        }`}
                     >
                       <MessageCircle className="w-3.5 h-3.5" />
                       <span>Pilih Paket</span>
@@ -720,7 +709,7 @@ export const LandingPage = () => {
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          
+
           {/* Header */}
           <div className="text-center max-w-3xl mx-auto space-y-3">
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-teal-500/20 text-teal-300 border border-teal-500/30 text-xs font-bold uppercase tracking-wider">
@@ -737,7 +726,7 @@ export const LandingPage = () => {
 
           {/* Pricing Highlight Pill & Schedule Rules Card */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
-            
+
             {/* Left: Pricing Options */}
             <div className="lg:col-span-5 bg-gradient-to-br from-emerald-950 via-teal-950 to-slate-900 p-6 sm:p-7 rounded-2xl border border-emerald-500/40 shadow-xl flex flex-col justify-between">
               <div>
@@ -991,22 +980,22 @@ export const LandingPage = () => {
         <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          
+
           {/* Urgency & Headline Header */}
           <div className="text-center max-w-3xl mx-auto space-y-3">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-rose-600/30 text-rose-300 border border-rose-500/50 text-xs sm:text-sm font-extrabold uppercase tracking-wider animate-pulse">
               <Flame className="w-4 h-4 fill-amber-400 text-amber-400" />
               <span>{VIP_BIMBEL_PROGRAM.headline}</span>
             </div>
-            
+
             <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-white uppercase">
               BIMBEL UMPTKIN SAMPAI UJIAN
             </h2>
-            
+
             <p className="text-xs sm:text-sm font-bold text-amber-300 uppercase tracking-widest">
               {VIP_BIMBEL_PROGRAM.subTitle}
             </p>
-            
+
             <p className="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-2xl mx-auto">
               {VIP_BIMBEL_PROGRAM.description}
             </p>
@@ -1015,7 +1004,7 @@ export const LandingPage = () => {
           {/* Pricing Card & Hero Visual Showcase */}
           <div className="bg-gradient-to-r from-emerald-900/90 via-teal-900/90 to-slate-900 p-6 sm:p-8 rounded-3xl border-2 border-amber-400 shadow-2xl relative overflow-hidden">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-              
+
               {/* Left Column: Price & Benefits list (Col 7) */}
               <div className="lg:col-span-7 space-y-5">
                 <div className="flex items-center gap-3 flex-wrap">
@@ -1160,7 +1149,7 @@ export const LandingPage = () => {
       {/* 3.8 SECTION GRUP KOMUNITAS BELAJAR (GRATIS RP 0) */}
       <section id="grup-komunitas" className="py-16 sm:py-20 bg-gradient-to-b from-white via-emerald-50/40 to-slate-50 border-t border-b border-emerald-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
-          
+
           {/* Header Title & Strict Rule Callout */}
           <div className="text-center max-w-3xl mx-auto space-y-3">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-100 text-emerald-800 text-xs font-extrabold uppercase tracking-wider border border-emerald-300">
@@ -1186,7 +1175,7 @@ export const LandingPage = () => {
 
           {/* 4 Poster Showcase Tabs / Highlights */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-            
+
             {/* Left Column: Group Categories & Room List */}
             <div className="space-y-6">
               {FREE_COMMUNITY_GROUPS.categories.map((cat) => (
@@ -1232,7 +1221,7 @@ export const LandingPage = () => {
 
             {/* Right Column: Poster Previews & Scan Barcode */}
             <div className="space-y-6">
-              
+
               {/* Scan Barcode Callout Box */}
               <div className="bg-gradient-to-br from-emerald-800 to-teal-900 text-white p-6 rounded-2xl shadow-xl space-y-4">
                 <div className="flex items-center gap-3">
