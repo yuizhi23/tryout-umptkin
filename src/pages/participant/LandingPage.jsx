@@ -7,6 +7,7 @@ import {
   BIMBEL_SUBJECTS,
   BIMBEL_RULES,
   VIP_BIMBEL_PROGRAM,
+  FREE_COMMUNITY_GROUPS,
   ALUMNI_TESTIMONIALS,
   CONTACT_INFO
 } from '../../data/initialData';
@@ -18,6 +19,10 @@ import bimbelHeroAlumniImg from '../../assets/bimbel-hero-alumni.jpg';
 import bimbelDapatApaImg from '../../assets/bimbel-dapat-apa.jpg';
 import bimbel1000MuridImg from '../../assets/bimbel-1000-murid.jpg';
 import bimbelQrWaImg from '../../assets/bimbel-qr-wa.jpg';
+import grupSpanImg from '../../assets/grup-span-umptkin.jpg';
+import grupSnbtImg from '../../assets/grup-snbp-snbt.jpg';
+import grupKipImg from '../../assets/grup-kip-kuliah.jpg';
+import grupPejuangImg from '../../assets/grup-pejuang-ptn.jpg';
 import {
   GraduationCap,
   Sparkles,
@@ -44,7 +49,11 @@ import {
   Video,
   Users2,
   Calendar,
-  CheckCircle
+  CheckCircle,
+  Ban,
+  UserCheck,
+  ExternalLink,
+  QrCode
 } from 'lucide-react';
 
 export const LandingPage = () => {
@@ -1145,6 +1154,171 @@ export const LandingPage = () => {
                 className="w-full h-auto object-cover"
               />
             </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* 3.8 SECTION GRUP KOMUNITAS BELAJAR (GRATIS RP 0) */}
+      <section id="grup-komunitas" className="py-16 sm:py-20 bg-gradient-to-b from-white via-emerald-50/40 to-slate-50 border-t border-b border-emerald-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+          
+          {/* Header Title & Strict Rule Callout */}
+          <div className="text-center max-w-3xl mx-auto space-y-3">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-100 text-emerald-800 text-xs font-extrabold uppercase tracking-wider border border-emerald-300">
+              <Users2 className="w-4 h-4 text-emerald-700" />
+              <span>{FREE_COMMUNITY_GROUPS.tag}</span>
+            </div>
+
+            <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-slate-900 uppercase">
+              GRUP KOMUNITAS BELAJAR WA & SALURAN
+            </h2>
+
+            {/* Crucial Rule Banner from user */}
+            <div className="p-4 rounded-2xl bg-rose-50 border-2 border-rose-300 shadow-sm text-center max-w-2xl mx-auto space-y-1">
+              <div className="flex items-center justify-center gap-2 text-rose-700 font-black text-sm sm:text-base">
+                <Ban className="w-5 h-5 text-rose-600 shrink-0" />
+                <span>{FREE_COMMUNITY_GROUPS.ruleNote}</span>
+              </div>
+              <p className="text-xs text-rose-600 font-medium leading-relaxed">
+                {FREE_COMMUNITY_GROUPS.warning}
+              </p>
+            </div>
+          </div>
+
+          {/* 4 Poster Showcase Tabs / Highlights */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+            
+            {/* Left Column: Group Categories & Room List */}
+            <div className="space-y-6">
+              {FREE_COMMUNITY_GROUPS.categories.map((cat) => (
+                <div
+                  key={cat.id}
+                  className="bg-white rounded-2xl border border-slate-200/90 p-5 shadow-xs hover:border-emerald-300 transition-all space-y-3"
+                >
+                  <div className="flex items-center justify-between pb-2 border-b border-slate-100">
+                    <div className="flex items-center gap-2">
+                      <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
+                      <h4 className="font-extrabold text-sm text-slate-900">{cat.categoryName}</h4>
+                    </div>
+                    <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">
+                      {cat.badge}
+                    </span>
+                  </div>
+
+                  <div className="space-y-2">
+                    {cat.groups.map((grp, gIdx) => (
+                      <div
+                        key={gIdx}
+                        className="flex items-center justify-between p-2.5 rounded-xl bg-slate-50 border border-slate-100 text-xs hover:bg-emerald-50/50 transition-colors"
+                      >
+                        <div>
+                          <p className="font-bold text-slate-800">{grp.name}</p>
+                          <span className="text-[11px] text-slate-400 font-mono">{grp.members}</span>
+                        </div>
+                        <a
+                          href="https://wa.me/6288247854631?text=Halo%20Kak%20Lenny%2C%20saya%20mau%20minta%20link%20masuk%20Grup%20Komunitas%20Belajar%20UMPTKIN%20(Saya%20berjanji%20tidak%20akan%20promosi%20apapun)."
+                          target="_blank"
+                          rel="noreferrer"
+                          className="px-3 py-1 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-lg text-[11px] flex items-center gap-1 shadow-xs transition-colors"
+                        >
+                          <span>Masuk Grup</span>
+                          <ExternalLink className="w-3 h-3" />
+                        </a>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Right Column: Poster Previews & Scan Barcode */}
+            <div className="space-y-6">
+              
+              {/* Scan Barcode Callout Box */}
+              <div className="bg-gradient-to-br from-emerald-800 to-teal-900 text-white p-6 rounded-2xl shadow-xl space-y-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
+                    <QrCode className="w-5 h-5 text-emerald-300" />
+                  </div>
+                  <div>
+                    <h4 className="font-black text-base text-white uppercase">KALIAN SUDAH MASUK GRUP?</h4>
+                    <p className="text-xs text-emerald-200">Scan Barcode di bawah untuk join Grup & Saluran WhatsApp</p>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-2 gap-3 pt-2">
+                  <div className="bg-white p-3 rounded-xl text-center space-y-2 text-slate-900">
+                    <span className="text-[10px] font-black uppercase text-emerald-800 block bg-emerald-100 py-0.5 rounded">
+                      GRUP WHATSAPP
+                    </span>
+                    <a
+                      href="https://wa.me/6288247854631"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="block p-1 bg-slate-50 border border-slate-200 rounded-lg hover:border-emerald-500 transition-colors"
+                    >
+                      <img src={bimbelQrWaImg} alt="QR Grup WA" className="w-full h-auto object-contain mx-auto max-h-36" />
+                    </a>
+                    <span className="text-[10px] text-slate-500 block">Klik / Scan Barcode</span>
+                  </div>
+
+                  <div className="bg-white p-3 rounded-xl text-center space-y-2 text-slate-900">
+                    <span className="text-[10px] font-black uppercase text-teal-800 block bg-teal-100 py-0.5 rounded">
+                      SALURAN WHATSAPP
+                    </span>
+                    <a
+                      href="https://wa.me/6288247854631"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="block p-1 bg-slate-50 border border-slate-200 rounded-lg hover:border-teal-500 transition-colors"
+                    >
+                      <img src={bimbelQrWaImg} alt="QR Saluran WA" className="w-full h-full object-contain mx-auto max-h-36" />
+                    </a>
+                    <span className="text-[10px] text-slate-500 block">Update Informasi Cepat</span>
+                  </div>
+                </div>
+
+                <div className="text-center pt-2">
+                  <p className="text-xs text-emerald-100 font-semibold">
+                    Admin Info: <strong>Kak Lenny Agustin (0882-4785-4631)</strong>
+                  </p>
+                </div>
+              </div>
+
+              {/* Real WhatsApp Community Proof Posters */}
+              <div className="grid grid-cols-2 gap-4">
+                <div className="rounded-xl overflow-hidden border border-slate-200 shadow-sm bg-white">
+                  <div className="p-2 bg-slate-100 text-[10px] font-bold text-slate-700 text-center truncate">
+                    Grup SPAN & UMPTKIN 2026
+                  </div>
+                  <img src={grupSpanImg} alt="Grup SPAN UMPTKIN" className="w-full h-auto object-cover" />
+                </div>
+
+                <div className="rounded-xl overflow-hidden border border-slate-200 shadow-sm bg-white">
+                  <div className="p-2 bg-slate-100 text-[10px] font-bold text-slate-700 text-center truncate">
+                    Grup Beasiswa KIP Kuliah
+                  </div>
+                  <img src={grupKipImg} alt="Grup KIP Kuliah" className="w-full h-auto object-cover" />
+                </div>
+
+                <div className="rounded-xl overflow-hidden border border-slate-200 shadow-sm bg-white">
+                  <div className="p-2 bg-slate-100 text-[10px] font-bold text-slate-700 text-center truncate">
+                    Grup SNBP & SNBT UTBK 2026
+                  </div>
+                  <img src={grupSnbtImg} alt="Grup SNBT UTBK" className="w-full h-auto object-cover" />
+                </div>
+
+                <div className="rounded-xl overflow-hidden border border-slate-200 shadow-sm bg-white">
+                  <div className="p-2 bg-slate-100 text-[10px] font-bold text-slate-700 text-center truncate">
+                    Grup Pejuang PTN & Linjur
+                  </div>
+                  <img src={grupPejuangImg} alt="Grup Pejuang PTN" className="w-full h-auto object-cover" />
+                </div>
+              </div>
+
+            </div>
+
           </div>
 
         </div>

@@ -295,6 +295,69 @@ export const VIP_BIMBEL_PROGRAM = {
   ]
 };
 
+export const FREE_COMMUNITY_GROUPS = {
+  title: 'GRUP KOMUNITAS BELAJAR',
+  price: 0,
+  tag: 'GRATIS 100% (Rp 0)',
+  ruleNote: 'Semua bisa masuk grup ASAL TIDAK PROMOSI APAPUN ITU ‼️',
+  warning: 'Dilarang keras spamming, jualan, promosi berbayar, atau membagikan link tidak bertanggung jawab. Pelanggar langsung di-kick permanen.',
+  categories: [
+    {
+      id: 'grp-cat-span',
+      categoryName: 'SPAN-PTKIN & UMPTKIN 2026',
+      badge: 'Komunitas Resmi UIN',
+      color: 'emerald',
+      groups: [
+        { name: 'GRUP (1) SPANPTKIN UMPTKIN 2026', members: '1.013 anggota', status: 'Hampir Penuh' },
+        { name: 'GRUP (2) SPANPTKIN UMPTKIN 2026', members: '917 anggota', status: 'Tersedia' },
+        { name: 'GRUP (3) SPANPTKIN UMPTKIN 2026', members: '1.024 anggota', status: 'Penuh' },
+        { name: 'GRUP CALON MAHASISWA UIN 2026', members: '731 anggota', status: 'Tersedia' },
+        { name: 'GRUP (2) CALON MAHASISWA UIN', members: '881 anggota', status: 'Tersedia' }
+      ]
+    },
+    {
+      id: 'grp-cat-snbt',
+      categoryName: 'SNBP, SNBT & UTBK 2026',
+      badge: 'Pejuang PTN Nasional',
+      color: 'sky',
+      groups: [
+        { name: 'GRUP (1) SNBP SNBT UTBK 2026', members: '978 anggota', status: 'Tersedia' },
+        { name: 'GRUP (2) SNBP SNBT UTBK 2026', members: '1.008 anggota', status: 'Hampir Penuh' },
+        { name: 'GRUP (3) SNBP SNBT UTBK 2026', members: '1.015 anggota', status: 'Hampir Penuh' },
+        { name: 'GRUP (4) SNBP SNBT UTBK 2026', members: '791 anggota', status: 'Tersedia' }
+      ]
+    },
+    {
+      id: 'grp-cat-kip',
+      categoryName: 'BEASISWA KIP KULIAH 2026',
+      badge: 'Info Beasiswa & Panduan',
+      color: 'purple',
+      groups: [
+        { name: 'GRUP (1) BEASISWA KIP KULIAH', members: '1.016 anggota', status: 'Hampir Penuh' },
+        { name: 'GRUP (2) BEASISWA KIP KULIAH', members: '1.018 anggota', status: 'Hampir Penuh' },
+        { name: 'GRUP (3) BEASISWA KIP KULIAH', members: '996 anggota', status: 'Tersedia' },
+        { name: 'GRUP (4) BEASISWA KIP KULIAH', members: '982 anggota', status: 'Tersedia' },
+        { name: 'GRUP (5) BEASISWA KIP KULIAH', members: '995 anggota', status: 'Tersedia' },
+        { name: 'GRUP (6) BEASISWA KIP KULIAH', members: '986 anggota', status: 'Tersedia' }
+      ]
+    },
+    {
+      id: 'grp-cat-spesifik',
+      categoryName: 'GRUP MINAT & PROGRAM KHUSUS',
+      badge: 'Fokus Belajar',
+      color: 'teal',
+      groups: [
+        { name: 'GRUP BIMBEL MATEMATIKA GRATIS', members: 'Aktif Belajar', status: 'Tersedia' },
+        { name: 'GRUP UMUM SPAN-UMPTKIN 2026', members: 'Aktif Diskusi', status: 'Tersedia' },
+        { name: 'GRUP KHUSUS GAPYEAR', members: 'Pejuang Gapyear', status: 'Tersedia' },
+        { name: 'GRUP PEJUANG KAMPUS 2026', members: 'Persiapan Masuk PTN', status: 'Tersedia' },
+        { name: 'GRUP LINTAS JURUSAN 2026', members: 'Fasilitas Linjur', status: 'Tersedia' },
+        { name: 'GRUP TRYOUT 1 (2026)', members: 'Peserta Simulasi Gratis', status: 'Tersedia' }
+      ]
+    }
+  ]
+};
+
 export const BIMBEL_RULES = {
   scheduleNote: 'Jadwal Bimbel pasti MALAM (antara jam 7 atau 8 malam / 19.00 - 20.00 WIB)',
   scheduleRestriction: 'TIDAK ADA Jadwal Bimbel Pagi, Siang, maupun Sore',

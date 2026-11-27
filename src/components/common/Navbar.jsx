@@ -49,7 +49,7 @@ export const Navbar = () => {
                   Tryout <span className="text-teal-600">UMPTKIN</span>
                 </span>
                 <span className="hidden sm:inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-semibold tracking-wide bg-teal-50 text-teal-700 border border-teal-200/80 leading-none">
-                  SSE 2025
+                  SSE 2026
                 </span>
               </div>
               <p className="text-[11px] text-slate-500 hidden sm:block mt-0.5 leading-none font-normal">
@@ -85,15 +85,17 @@ export const Navbar = () => {
               </button>
               <button
                 type="button"
-                onClick={() => navigateTo('ranking')}
-                className={`px-3 py-1.5 text-xs font-semibold rounded-lg transition-colors flex items-center gap-1.5 ${
-                  currentPage === 'ranking'
-                    ? 'text-teal-700 bg-teal-50'
-                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100/70'
-                }`}
+                onClick={() => {
+                  navigateTo('landing');
+                  setTimeout(() => {
+                    const el = document.getElementById('grup-komunitas');
+                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+                  }, 150);
+                }}
+                className="px-3 py-1.5 text-xs font-semibold rounded-lg text-emerald-700 bg-emerald-50 hover:bg-emerald-100 transition-colors flex items-center gap-1.5 border border-emerald-200/60"
               >
-                <Trophy className="w-3.5 h-3.5 text-amber-500" />
-                <span>Peringkat Nasional</span>
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                <span>Grup Komunitas (Rp 0)</span>
               </button>
               {currentUser && (
                 <button
