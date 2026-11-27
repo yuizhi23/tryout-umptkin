@@ -4,10 +4,9 @@ from reportlab.lib.pagesizes import A4
 from reportlab.lib import colors
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.platypus import (
-    SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle, HRFlowable, KeepTogether
+    SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle, HRFlowable
 )
 from reportlab.pdfgen import canvas
-from datetime import datetime
 
 pdf_public_path = '/Users/yukiekiyoshi/Downloads/tryout/public/INVOICE_TRYOUT_UMPTKIN.pdf'
 pdf_workspace_path = '/Users/yukiekiyoshi/Downloads/tryout/INVOICE_TRYOUT_UMPTKIN.pdf'
@@ -19,19 +18,27 @@ def build_invoice():
         pagesize=A4,
         leftMargin=38,
         rightMargin=38,
-        topMargin=40,
+        topMargin=42,
         bottomMargin=38
     )
 
     styles = getSampleStyleSheet()
 
-    # Custom styles
-    brand_title = ParagraphStyle(
-        'BrandTitle',
+    brand_name = ParagraphStyle(
+        'BrandName',
         parent=styles['Normal'],
         fontName='Helvetica-Bold',
-        fontSize=18,
-        leading=22,
+        fontSize=20,
+        leading=24,
+        textColor=colors.HexColor('#0F172A')
+    )
+
+    brand_sub = ParagraphStyle(
+        'BrandSub',
+        parent=styles['Normal'],
+        fontName='Helvetica-Bold',
+        fontSize=10,
+        leading=14,
         textColor=colors.HexColor('#0F766E')
     )
 
@@ -39,18 +46,28 @@ def build_invoice():
         'InvoiceBadge',
         parent=styles['Normal'],
         fontName='Helvetica-Bold',
-        fontSize=20,
-        leading=24,
+        fontSize=22,
+        leading=26,
         alignment=2,
-        textColor=colors.HexColor('#0F172A')
+        textColor=colors.HexColor('#0F766E')
+    )
+
+    invoice_sub = ParagraphStyle(
+        'InvoiceSub',
+        parent=styles['Normal'],
+        fontName='Helvetica',
+        fontSize=8.5,
+        leading=12,
+        alignment=2,
+        textColor=colors.HexColor('#64748B')
     )
 
     meta_label = ParagraphStyle(
         'MetaLabel',
         parent=styles['Normal'],
         fontName='Helvetica-Bold',
-        fontSize=8,
-        leading=11,
+        fontSize=7.5,
+        leading=10.5,
         textColor=colors.HexColor('#64748B')
     )
 
@@ -60,7 +77,7 @@ def build_invoice():
         fontName='Helvetica',
         fontSize=8.5,
         leading=12,
-        textColor=colors.HexColor('#0F172A')
+        textColor=colors.HexColor('#1E293B')
     )
 
     meta_val_bold = ParagraphStyle(
@@ -161,34 +178,25 @@ def build_invoice():
         textColor=colors.HexColor('#0F766E')
     )
 
-    note_title = ParagraphStyle(
-        'NoteTitle',
-        parent=styles['Normal'],
-        fontName='Helvetica-Bold',
-        fontSize=8,
-        leading=11,
-        textColor=colors.HexColor('#0F172A')
-    )
-
     note_body = ParagraphStyle(
         'NoteBody',
         parent=styles['Normal'],
         fontName='Helvetica',
         fontSize=7.5,
-        leading=10.5,
+        leading=11,
         textColor=colors.HexColor('#475569')
     )
 
     story = []
 
-    # 1. Header (Logo/Title & INVOICE Text)
+    # 1. Header (Yukie Kiyoshi & INVOICE)
     header_data = [
         [
-            Paragraph('<b>WEB DEVELOPMENT &amp; IT SERVICES</b><br/><font color="#0F766E" size="13"><b>Platform Tryout UMPTKIN</b></font>', brand_title),
+            Paragraph('<b>YUKIE KIYOSHI</b><br/><font color="#0F766E" size="10">Web Development &amp; IT Services</font>', brand_name),
             Paragraph('<b>INVOICE</b><br/><font size="8" color="#64748B">TAGIHAN RESMI</font>', invoice_badge)
         ]
     ]
-    t_header = Table(header_data, colWidths=[320, 199])
+    t_header = Table(header_data, colWidths=[310, 209])
     t_header.setStyle(TableStyle([
         ('VALIGN', (0,0), (-1,-1), 'TOP'),
         ('BOTTOMPADDING', (0,0), (-1,-1), 0),
@@ -198,7 +206,7 @@ def build_invoice():
     story.append(Spacer(1, 8))
     story.append(HRFlowable(width='100%', thickness=2, color=colors.HexColor('#0D9488'), spaceAfter=14))
 
-    # 2. Invoice Meta & Client Info
+    # 2. Invoice Meta & Client Info (NO JATUH TEMPO)
     info_data = [
         [
             Paragraph('DITUJUKAN KEPADA (KLIEN):', meta_label),
@@ -212,20 +220,20 @@ def build_invoice():
         ],
         [
             Paragraph('Pengelola Program Bimbingan &amp; Tryout UMPTKIN', meta_val),
-            Paragraph('STATUS PEMBAYARAN:', meta_label),
-            Paragraph('<font color="#D97706"><b>MENUNGGU PEMBAYARAN</b></font>', meta_val)
+            Paragraph('PENGEMBANG:', meta_label),
+            Paragraph('<b>Yukie Kiyoshi</b>', meta_val_bold)
         ],
         [
             Paragraph('WhatsApp: 0882-4785-4631', meta_val),
-            Paragraph('JATUH TEMPO:', meta_label),
-            Paragraph('30 November 2026', meta_val)
+            Paragraph('STATUS:', meta_label),
+            Paragraph('<font color="#D97706"><b>MENUNGGU PEMBAYARAN</b></font>', meta_val)
         ]
     ]
-    t_info = Table(info_data, colWidths=[240, 120, 159])
+    t_info = Table(info_data, colWidths=[250, 110, 159])
     t_info.setStyle(TableStyle([
         ('VALIGN', (0,0), (-1,-1), 'TOP'),
-        ('TOPPADDING', (0,0), (-1,-1), 2),
-        ('BOTTOMPADDING', (0,0), (-1,-1), 2),
+        ('TOPPADDING', (0,0), (-1,-1), 2.5),
+        ('BOTTOMPADDING', (0,0), (-1,-1), 2.5),
     ]))
     story.append(t_info)
     story.append(Spacer(1, 14))
@@ -295,31 +303,31 @@ def build_invoice():
         ('LINEBELOW', (0,3), (-1,3), 1.5, colors.HexColor('#0D9488')),
         ('LINEABOVE', (0,3), (-1,3), 1, colors.HexColor('#0D9488')),
         ('BACKGROUND', (0,3), (-1,3), colors.HexColor('#F0FDFA')),
-        ('TOPPADDING', (0,0), (-1,-1), 5),
-        ('BOTTOMPADDING', (0,0), (-1,-1), 5),
+        ('TOPPADDING', (0,0), (-1,-1), 6),
+        ('BOTTOMPADDING', (0,0), (-1,-1), 6),
         ('LEFTPADDING', (0,0), (-1,-1), 5),
         ('RIGHTPADDING', (0,0), (-1,-1), 5),
     ]))
     story.append(t_items)
-    story.append(Spacer(1, 14))
+    story.append(Spacer(1, 16))
 
-    # 4. Payment Instructions & Terms Box
+    # 4. Payment Instructions & Terms Box (NO TTD, CLEAN)
     payment_box_data = [
         [
             Paragraph(
                 '<b>INSTRUKSI PEMBAYARAN:</b><br/>'
                 'Pembayaran tagihan dapat ditransfer melalui salah satu rekening/e-wallet berikut:<br/>'
-                '• <b>Bank Transfer:</b> (Silakan transfer ke nomor rekening yang disepakati)<br/>'
                 '• <b>Jumlah Transfer:</b> <font color="#0F766E"><b>Rp 1.200.000</b> (Satu Juta Dua Ratus Ribu Rupiah)</font><br/>'
-                '• <b>Konfirmasi:</b> Kirimkan bukti transfer melalui WhatsApp setelah melakukan pembayaran.',
+                '• <b>Konfirmasi:</b> Kirimkan bukti transfer melalui WhatsApp setelah melakukan pembayaran.<br/>'
+                '• Penyerahan akses penuh web &amp; panduan pengoperasian dilakukan setelah pembayaran.',
                 note_body
             ),
             Paragraph(
-                '<b>CATATAN &amp; KETENTUAN LAYANAN:</b><br/>'
-                '1. Sistem website aktif selamanya (Lifetime) tanpa biaya langganan bulanan.<br/>'
-                '2. Domain .com aktif selama 1 tahun penuh sejak tanggal aktivasi.<br/>'
-                '3. Penyerahan akses penuh web &amp; panduan pengoperasian dilakukan setelah konfirmasi pembayaran.<br/>'
-                '4. Termasuk garansi dan pendampingan teknis.',
+                '<b>CATATAN LAYANAN:</b><br/>'
+                '• <b>Masa Aktif Website:</b> Selamanya (Lifetime / Bebas Biaya Bulanan).<br/>'
+                '• <b>Masa Aktif Domain:</b> 1 Tahun Penuh sejak tanggal aktivasi.<br/>'
+                '• <b>Dukungan Teknis:</b> Termasuk pendampingan dan garansi penyesuaian sistem.<br/>'
+                '• <i>Terima kasih atas kerja sama dan kepercayaan Anda.</i>',
                 note_body
             )
         ]
@@ -329,32 +337,16 @@ def build_invoice():
         ('BACKGROUND', (0,0), (-1,-1), colors.HexColor('#F8FAFC')),
         ('BOX', (0,0), (-1,-1), 0.75, colors.HexColor('#E2E8F0')),
         ('VALIGN', (0,0), (-1,-1), 'TOP'),
-        ('TOPPADDING', (0,0), (-1,-1), 8),
-        ('BOTTOMPADDING', (0,0), (-1,-1), 8),
-        ('LEFTPADDING', (0,0), (-1,-1), 8),
-        ('RIGHTPADDING', (0,0), (-1,-1), 8),
+        ('TOPPADDING', (0,0), (-1,-1), 9),
+        ('BOTTOMPADDING', (0,0), (-1,-1), 9),
+        ('LEFTPADDING', (0,0), (-1,-1), 9),
+        ('RIGHTPADDING', (0,0), (-1,-1), 9),
     ]))
     story.append(t_box)
-    story.append(Spacer(1, 16))
-
-    # 5. Sign-off / Signature section
-    sign_data = [
-        [
-            Paragraph('<font color="#64748B">Diterima oleh Klien,</font><br/><br/><br/><br/><b><u>Lenny Agustin, S. Pd.</u></b><br/><font size="7" color="#64748B">Klien / Pemesan</font>', meta_val),
-            Paragraph('<font color="#64748B">Hormat kami,</font><br/><br/><br/><br/><b><u>Tim Pengembang Website</u></b><br/><font size="7" color="#64748B">Web Developer</font>', ParagraphStyle('S2', parent=meta_val, alignment=2))
-        ]
-    ]
-    t_sign = Table(sign_data, colWidths=[250, 269])
-    t_sign.setStyle(TableStyle([
-        ('VALIGN', (0,0), (-1,-1), 'TOP'),
-        ('TOPPADDING', (0,0), (-1,-1), 0),
-        ('BOTTOMPADDING', (0,0), (-1,-1), 0),
-    ]))
-    story.append(t_sign)
 
     doc.build(story)
     shutil.copyfile(pdf_public_path, pdf_workspace_path)
-    print(f'Invoice PDF generated successfully ({os.path.getsize(pdf_public_path)} bytes).')
+    print(f'Invoice PDF without signature generated successfully ({os.path.getsize(pdf_public_path)} bytes).')
 
 if __name__ == '__main__':
     build_invoice()
