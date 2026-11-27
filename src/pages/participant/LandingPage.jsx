@@ -6,6 +6,7 @@ import {
   REGULAR_PACKAGES,
   BIMBEL_SUBJECTS,
   BIMBEL_RULES,
+  VIP_BIMBEL_PROGRAM,
   ALUMNI_TESTIMONIALS,
   CONTACT_INFO
 } from '../../data/initialData';
@@ -13,6 +14,10 @@ import bimbelMateriImg from '../../assets/bimbel-materi.jpg';
 import bimbelZoomImg from '../../assets/bimbel-zoom.jpg';
 import testimoniLolosImg from '../../assets/testimoni-lolos.jpg';
 import testimoniChatImg from '../../assets/testimoni-chat.jpg';
+import bimbelHeroAlumniImg from '../../assets/bimbel-hero-alumni.jpg';
+import bimbelDapatApaImg from '../../assets/bimbel-dapat-apa.jpg';
+import bimbel1000MuridImg from '../../assets/bimbel-1000-murid.jpg';
+import bimbelQrWaImg from '../../assets/bimbel-qr-wa.jpg';
 import {
   GraduationCap,
   Sparkles,
@@ -968,6 +973,178 @@ export const LandingPage = () => {
               </div>
             </div>
 
+          </div>
+
+        </div>
+      </section>
+
+      {/* 3.7 SPECIAL SHOWCASE: BIMBEL UMPTKIN SAMPAI UJIAN (BEST SELLER PROGRAM) */}
+      <section className="py-16 sm:py-20 bg-gradient-to-b from-emerald-950 via-slate-900 to-teal-950 text-white relative overflow-hidden border-t-4 border-amber-400">
+        <div className="absolute top-0 right-1/4 w-96 h-96 bg-amber-400/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+          
+          {/* Urgency & Headline Header */}
+          <div className="text-center max-w-3xl mx-auto space-y-3">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-rose-600/30 text-rose-300 border border-rose-500/50 text-xs sm:text-sm font-extrabold uppercase tracking-wider animate-pulse">
+              <Flame className="w-4 h-4 fill-amber-400 text-amber-400" />
+              <span>{VIP_BIMBEL_PROGRAM.headline}</span>
+            </div>
+            
+            <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-white uppercase">
+              BIMBEL UMPTKIN SAMPAI UJIAN
+            </h2>
+            
+            <p className="text-xs sm:text-sm font-bold text-amber-300 uppercase tracking-widest">
+              {VIP_BIMBEL_PROGRAM.subTitle}
+            </p>
+            
+            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-2xl mx-auto">
+              {VIP_BIMBEL_PROGRAM.description}
+            </p>
+          </div>
+
+          {/* Pricing Card & Hero Visual Showcase */}
+          <div className="bg-gradient-to-r from-emerald-900/90 via-teal-900/90 to-slate-900 p-6 sm:p-8 rounded-3xl border-2 border-amber-400 shadow-2xl relative overflow-hidden">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              
+              {/* Left Column: Price & Benefits list (Col 7) */}
+              <div className="lg:col-span-7 space-y-5">
+                <div className="flex items-center gap-3 flex-wrap">
+                  <span className="px-3 py-1 rounded-full bg-amber-400 text-slate-950 font-black text-xs uppercase tracking-wider flex items-center gap-1 shadow-sm">
+                    <ThumbsUp className="w-3.5 h-3.5" />
+                    BEST SELLER
+                  </span>
+                  <span className="px-3 py-1 rounded-full bg-rose-600 text-white font-extrabold text-xs uppercase tracking-wider flex items-center gap-1">
+                    <Flame className="w-3.5 h-3.5" />
+                    HEMAT 70.000
+                  </span>
+                  <span className="px-3 py-1 rounded-full bg-rose-950/80 text-rose-300 border border-rose-600/60 font-bold text-xs">
+                    {VIP_BIMBEL_PROGRAM.quotaAlert}
+                  </span>
+                </div>
+
+                <div className="flex items-baseline gap-3">
+                  <span className="text-sm sm:text-base text-slate-400 line-through">
+                    Rp {VIP_BIMBEL_PROGRAM.originalPrice.toLocaleString('id-ID')}
+                  </span>
+                  <span className="text-3xl sm:text-5xl font-black text-amber-300 font-mono">
+                    Rp {VIP_BIMBEL_PROGRAM.promoPrice.toLocaleString('id-ID')}
+                  </span>
+                  <span className="text-xs text-emerald-300 font-bold bg-emerald-950/80 px-2 py-1 rounded border border-emerald-600">
+                    Akses Sampai Hari Ujian
+                  </span>
+                </div>
+
+                {/* What will you get (Checklist) */}
+                <div className="space-y-2.5 pt-2">
+                  <p className="text-xs sm:text-sm font-extrabold text-white uppercase tracking-wider">
+                    Kamu bakal dapat apa aja di program ini ?
+                  </p>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs text-slate-200">
+                    {VIP_BIMBEL_PROGRAM.benefits.map((b, idx) => (
+                      <div key={idx} className="p-2.5 rounded-xl bg-slate-800/80 border border-slate-700/80 flex items-start gap-2">
+                        <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                        <div>
+                          <strong className="text-white block font-bold leading-tight">{b.title}</strong>
+                          <span className="text-[11px] text-slate-300 mt-0.5 block leading-tight">{b.desc}</span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Call to action message & WA button */}
+                <div className="pt-4 space-y-3">
+                  <div className="p-3 bg-amber-400/10 border border-amber-400/30 rounded-xl text-amber-200 text-xs font-semibold leading-relaxed">
+                    📢 {VIP_BIMBEL_PROGRAM.ctaText}
+                  </div>
+
+                  <div className="flex flex-col sm:flex-row items-center gap-3">
+                    <a
+                      href={`https://wa.me/6288247854631?text=${encodeURIComponent(
+                        'Halo Kak Lenny Agustin, saya mau daftar program "BIMBEL UMPTKIN SAMPAI UJIAN" promo Rp 130.000. Mohon info cara bergabungnya!'
+                      )}`}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="w-full sm:w-auto px-6 py-3.5 bg-amber-400 hover:bg-amber-300 text-slate-950 font-black text-xs sm:text-sm rounded-xl shadow-lg transition-all flex items-center justify-center gap-2"
+                    >
+                      <MessageCircle className="w-4 h-4" />
+                      <span>Daftar Sekarang via WhatsApp</span>
+                    </a>
+
+                    <a
+                      href="https://wa.me/6288247854631"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="w-full sm:w-auto px-5 py-3.5 bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs sm:text-sm rounded-xl border border-slate-700 flex items-center justify-center gap-2"
+                    >
+                      <Phone className="w-4 h-4 text-emerald-400" />
+                      <span>0882-4785-4631 (Kak Lenny)</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Column: Poster Image Banner & Scan Barcode (Col 5) */}
+              <div className="lg:col-span-5 space-y-4">
+                <div className="rounded-2xl overflow-hidden border-2 border-amber-400/80 shadow-2xl bg-slate-900">
+                  <img
+                    src={bimbelHeroAlumniImg}
+                    alt="Bimbel UMPTKIN Sampai Ujian"
+                    className="w-full h-auto object-cover"
+                  />
+                </div>
+
+                <div className="rounded-2xl overflow-hidden border border-slate-700 bg-slate-900/90 p-4 flex items-center gap-4">
+                  <div className="w-24 h-24 bg-white rounded-xl p-1 shrink-0 overflow-hidden">
+                    <img
+                      src={bimbelQrWaImg}
+                      alt="Scan Barcode WhatsApp"
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                  <div className="text-xs text-slate-300 space-y-1">
+                    <span className="font-extrabold text-amber-300 uppercase tracking-wide block">
+                      Daftar Cepat via Scan Barcode
+                    </span>
+                    <p className="text-[11px] text-slate-300 leading-tight">
+                      Arahkan kamera smartphone Anda ke kode QR untuk langsung chat dengan Kak Lenny.
+                    </p>
+                    <p className="text-[10px] text-emerald-400 font-mono">Respon Cepat 24 Jam</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          {/* Infographic: Dapat Apa Aja Kalo Ikut Program Ini & 1.000++ Murid Kami Sudah Berhasil */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
+            <div className="rounded-2xl overflow-hidden border border-slate-700 bg-slate-800/90 shadow-xl">
+              <div className="p-3.5 bg-slate-850 border-b border-slate-700 flex items-center justify-between text-xs font-bold text-slate-200">
+                <span>DAPAT APA AJA KALO IKUT PROGRAM INI ?</span>
+                <span className="text-amber-400 text-[10px]">Fasilitas Lengkap</span>
+              </div>
+              <img
+                src={bimbelDapatApaImg}
+                alt="Fasilitas Program Bimbel Ebook Premium"
+                className="w-full h-auto object-cover"
+              />
+            </div>
+
+            <div className="rounded-2xl overflow-hidden border border-slate-700 bg-slate-800/90 shadow-xl">
+              <div className="p-3.5 bg-slate-850 border-b border-slate-700 flex items-center justify-between text-xs font-bold text-slate-200">
+                <span>1.000++ MURID KAMI SUDAH BERHASIL MASUK KAMPUS IMPIAN</span>
+                <span className="text-emerald-400 text-[10px]">Sekarang Giliran Kamu!</span>
+              </div>
+              <img
+                src={bimbel1000MuridImg}
+                alt="1000+ Murid Berhasil Lolos UMPTKIN"
+                className="w-full h-auto object-cover"
+              />
+            </div>
           </div>
 
         </div>

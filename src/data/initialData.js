@@ -257,6 +257,44 @@ export const BIMBEL_SUBJECTS = [
   }
 ];
 
+export const VIP_BIMBEL_PROGRAM = {
+  title: 'BIMBEL UMPTKIN SAMPAI UJIAN',
+  subTitle: 'PROGRAM EBOOK PREMIUM • BONGKAR SOAL LANGSUNG BERSAMA TENTOR',
+  headline: 'KESEMPATAN TERAKHIR BELAJAR BUAT TEMBUS KAMPUS IMPIAN KAMU ‼️🔥',
+  description: 'Program Bimbel Ebook Premium ini memaksimalkan persiapan UMPTKIN biar kamu makin PEDE kerjain soal UMPTKIN sampai hari H!',
+  originalPrice: 200000,
+  promoPrice: 130000,
+  badge: 'BEST SELLER • PROMO SPESIAL',
+  quotaAlert: 'KUOTA TERBATAS ❌️',
+  ctaText: 'LETSGO KITA WUJUDKAN KAMPUS IMPIAN KALIAN ITU !! KALO BUKAN SEKARANG KAPAN LAGI ??? JANGAN SAMPAI MENYESAL ‼️🔥',
+  benefits: [
+    {
+      title: 'Belajar Langsung Bareng Tentor Terbaik',
+      desc: 'Bimbingan tatap muka daring interaktif langsung bersama Kak Lenny Agustin, S. Pd. & tentor ahli.'
+    },
+    {
+      title: 'Modul Eksklusif Ebook Premium 2026',
+      desc: 'Materi terlengkap, rangkuman rumus cepat, dan bank soal HOTS terstandarisasi PMB PTKIN.'
+    },
+    {
+      title: 'Tips dan Trik Cepat Kerjain Soal UMPTKIN',
+      desc: 'Metode eliminasi jawaban kilat, manajemen waktu SSE, dan strategi memilih jawaban akurat.'
+    },
+    {
+      title: 'Rekaman Kelas + E-Pembahasan Lengkap',
+      desc: 'Setiap sesi kelas terekam rapi sehingga bisa diputar ulang kapan pun tanpa batas waktu.'
+    },
+    {
+      title: 'Grup Bimbingan Eksklusif (1.000+ Calon Mhs)',
+      desc: 'Komunitas belajar aktif saling dukung, info jadwal harian, serta konsultasi langsung via WhatsApp.'
+    },
+    {
+      title: '999++ Kosakata Arab & Inggris + Tryout Prediksi',
+      desc: 'Kamus sakti kosakata yang paling sering muncul di UMPTKIN plus simulasi tryout lengkap pembahasan.'
+    }
+  ]
+};
+
 export const BIMBEL_RULES = {
   scheduleNote: 'Jadwal Bimbel pasti MALAM (antara jam 7 atau 8 malam / 19.00 - 20.00 WIB)',
   scheduleRestriction: 'TIDAK ADA Jadwal Bimbel Pagi, Siang, maupun Sore',
